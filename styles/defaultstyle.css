@@ -2,7 +2,8 @@
 /* css released under Creative Commons License -  http://creativecommons.org/licenses/by/2.0/deed.en  */
 
 body {
-  background-color: #BBBCBC;
+  background-image: url("images/grey_sandbag.png");
+  background-repeat: repeat-all;
   font-size: 11px;
   font-family: Verdana, Arial, SunSans-Regular, Sans-Serif;
   color: #564b47;
