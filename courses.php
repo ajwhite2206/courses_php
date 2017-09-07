@@ -26,7 +26,9 @@
 
 		<div id="wrapper">
 			<?php
-				$connStr = "odbc:DRIVER={Microsoft Access Driver (*.mdb, *.accdb)}; DBQ=C:\\wamp\\www\\database\\course.mdb";
+				$user = '';
+				$password = '';
+				$connStr = "odbc:DRIVER={Microsoft Access Driver (*.mdb, *.accdb)}; DBQ=C:\\xampp\\htdocs\\Connect\\database\\course.mdb;";
 				try {
 					$handler = new PDO($connStr);
 					$handler->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -50,18 +52,19 @@
 					</tr>
 
 					<?php
-						while($r = $query->fetch()) {
-					?>
-						<tr>
-							<td> <?php echo $r['subject']; ?> </td>
-							<td> <?php echo $r['points']; ?> </td>
-							<td> <?php echo $r['startDate']; ?> </td>
-							<td> <?php echo $r['startTime']; ?> </td>
-							<td> <?php echo $r['category']; ?> </td>
-							<td> <?php echo $r['instructor']; ?> </td>
-							<td> <?php echo $r['location']; ?> </td>
-						</tr>
-					<?php
+						while($r = $query->fetch(PDO::FETCH_OBJ)) {
+							//echo $r->subject, 'br>'; } << better way to access objects
+				
+					echo '	<tr>
+							<td>'; echo $r->subject, '</td>
+							<td>'; echo $r->points, '</td>
+							<td>'; echo $r->startDate, '</td>
+							<td>';  echo $r->startTime, '</td>
+							<td>'; echo $r->category, '</td>
+							<td>'; echo $r->instructor, '</td>
+							<td>'; echo $r->location, '</td>
+						</tr>';
+					
 						}
 					?>
 
