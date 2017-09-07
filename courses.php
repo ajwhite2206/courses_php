@@ -25,21 +25,6 @@
 		</div>
 
 		<div id="wrapper">
-			<?php
-				$user = '';
-				$password = '';
-				$connStr = "odbc:DRIVER={Microsoft Access Driver (*.mdb, *.accdb)}; DBQ=C:\\xampp\\htdocs\\Connect\\database\\course.mdb;";
-				try {
-					$handler = new PDO($connStr);
-					$handler->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-				}
-				catch(PDOException $e) {
-					echo $e->getMessage();
-					die();
-				}
-				$query = $handler->query('SELECT * FROM tblCourses WHERE startDate > #1/1/2017#');
-				?>
-
 				<table>
 					<tr>
 						<th>Course Title</th>
@@ -52,6 +37,8 @@
 					</tr>
 
 					<?php
+						include 'datalogin.php';
+						
 						while($r = $query->fetch(PDO::FETCH_OBJ)) {
 							//echo $r->subject, 'br>'; } << better way to access objects
 				
