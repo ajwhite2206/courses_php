@@ -1,3 +1,7 @@
+<?php
+	include 'datalogin.php';
+
+?>
 <!DOCTYPE html>
 <html>
 
