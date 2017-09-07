@@ -45,12 +45,6 @@
 
     </div> <!-- /container -->
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery-2.2.4.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <!-- The AJAX login script -->
-    <script src="js/login.js"></script>
     <br>
 
   </body>
