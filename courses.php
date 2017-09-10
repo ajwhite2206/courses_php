@@ -43,14 +43,14 @@
 							//echo $r->subject, 'br>'; } << better way to access objects
 				
 					echo '	<tr>
-							<td>'; echo $r->subject, '</td>
-							<td>'; echo $r->points, '</td>
-							<td>'; echo $r->startDate, '</td>
-							<td>';  echo $r->startTime, '</td>
-							<td>'; echo $r->category, '</td>
-							<td>'; echo $r->instructor, '</td>
-							<td>'; echo $r->location, '</td>
-						</tr>';
+								<td>'; echo $r->subject, '</td>
+								<td>'; echo $r->points, '</td>
+								<td>'; echo $r->startDate, '</td>
+								<td>'; echo $r->startTime, '</td>
+								<td>'; echo $r->category, '</td>
+								<td>'; echo $r->instructor, '</td>
+								<td>'; echo $r->location, '</td>
+							</tr>';
 					
 						}
 					?>
