@@ -21,7 +21,6 @@
 	$emailquery = $conn->query('SELECT * FROM tblStudents;');
 	while($r = $emailquery->fetch(PDO::FETCH_OBJ)) {
 		$other = (string)($r->email);
-		//$other = stripper($temp);
 		if ($other == $email){
 			$itsamatch = true;
 		} else {
@@ -33,7 +32,7 @@
 	if ($itsamatch){
 		//code is the variable that contains the reset password that is pushed in the email
 		$code = substr(md5(uniqid(rand(),1)),3,10);
-		$pass = md5($code); //this encrypts the password for keeping in the database, may or may not use
+
 		//passes variable code so it can be used in passreset.php
 		$_SESSION['code'] = $code;
 		

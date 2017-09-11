@@ -15,12 +15,22 @@
 					//this is not working
 					echo $_GET["newpass1"];
 					echo $email;
-					$sth = $conn->prepare('UPDATE tblStudents SET password = yaz WHERE email = ajwhite2206@lcmail.lcsc.edu');
-					echo $sth;
-					/* $sql = 'UPDATE tblStudents SET password = yaz WHERE email = ajwhite2206@lcmail.lcsc.edu';
-					$stmt = $conn->prepare($sql);
-					$inst = $stmt->execute(); */
-				
+					$qry = "UPDATE tblStudents SET password = " . $_GET['newpass1'] . "WHERE email='ajwhite2206@lcmail.lcsc.edu'";
+					$query = $conn->prepare(/*"UPDATE tblStudents SET password = ? WHERE email='ajwhite2206@lcmail.lcsc.edu'"*/$qry);
+					//$query->bindParam(1, $_GET["newpass1"], PDO::PARAM_STR);
+					//$query->execute();
+					while($r = $query->fetch(PDO::FETCH_OBJ)){
+						echo 'should be successful';
+					}
+					
+					
+				/* 	thisworksssss
+					$query = $conn->query("UPDATE tblStudents SET password = 'warrior' WHERE email='ajwhite2206@lcmail.lcsc.edu'");
+					while($r = $query->fetch(PDO::FETCH_OBJ)){
+					} */
+					
+					 
+
 				// this is all the error handling if the form was not filled out correctly
 				} else {
 					echo 'Passwords do not match.';
