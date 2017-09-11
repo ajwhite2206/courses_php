@@ -38,7 +38,7 @@
 
 					<?php
 						include 'datalogin.php';
-						
+						$query = $conn->query('SELECT * FROM tblCourses WHERE startDate > #1/1/2017#');
 						while($r = $query->fetch(PDO::FETCH_OBJ)) {
 							//echo $r->subject, 'br>'; } << better way to access objects
 				

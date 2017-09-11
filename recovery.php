@@ -30,7 +30,7 @@
 			<div id="wrapper">
 					<body>
 						<div class="container">
-						
+							<!-- This is where the user entry is imputed, myemail start here and will be carried throughout checkemail and passreset-->
 							<form action="checkemail.php" method="post">
 								<h2 class="form-signin-heading">Reset Password:</h2>
 								<input name="myemail" id="myemail" type="text" class="form-control" placeholder="Email" autofocus>
