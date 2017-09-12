@@ -6,13 +6,16 @@
 <html>
 
 <head>
-	<link type="text/css" href="styles/defaultstyle.css" rel="stylesheet" media="screen" />
-	<link type="text/css" href="styles/courses.css" rel="stylesheet" media="screen" />
+	<!-- <link type="text/css" href="styles/defaultstyle.css" rel="stylesheet" media="screen" />
+	<link type="text/css" href="styles/courses.css" rel="stylesheet" media="screen" /> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
 	<title>Professional Development and Training || Lewis-Clark State College</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 
 <body>
+
 	<div id="container">
 		<div id="banner">
 			<!--Start of the header, and LCSC logo image -->
@@ -27,6 +30,14 @@
 			<!-- strip just below banner -->
 			<h1>Login page</h1>
 		</div>
+
+		<div class="scrollmenu">
+  <a href="index.php">Home</a>
+  <a href="login.php">Login page</a>
+  <a href="courses.php">Courses</a>
+  <a href="passreset.php">Password reset</a>
+  ...
+</div>
 
 		<div id="wrapper">
 			<body>
