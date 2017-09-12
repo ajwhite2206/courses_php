@@ -6,7 +6,7 @@ if( isset($_SESSION['email']) ){
 	header("Location: index.php");
 }
 
-require 'database.php';
+require 'datalogin.php';
 
 $message = '';
 
