@@ -5,7 +5,8 @@ $server = 'localhost';
 $username = 'root';
 $password = 'root';
 $database = 'auth';
-$connStr =  "odbc:DRIVER={Microsoft Access Driver (*.mdb, *.accdb)}; DBQ=C:\\wamp\\www\\new-php\\db\\course.mdb;";
+/*$connStr =  "odbc:DRIVER={Microsoft Access Driver (*.mdb, *.accdb)}; DBQ=C:\\wamp\\www\\new-php\\db\\course.mdb;";*/
+$connStr =  "odbc:DRIVER={Microsoft Access Driver (*.mdb, *.accdb)}; DBQ=C:\\xampp\\htdocs\\course.mdb;";
 
 try{
 	$conn = new PDO($connStr);
