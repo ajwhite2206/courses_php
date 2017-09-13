@@ -25,8 +25,8 @@
 		</div>
 
 		<div id="wrapper">
-				<table>
-					<tr>
+				<table id="tblView">
+					<tr id="tblViewHeader">
 						<th>Course Title</th>
 						<th>Points</th>
 						<th>Date</th>
@@ -42,7 +42,7 @@
 						while($r = $query->fetch(PDO::FETCH_OBJ)) {
 							//echo $r->subject, 'br>'; } << better way to access objects
 				
-					echo '	<tr>
+					echo '<tr>
 								<td>'; echo $r->subject, '</td>
 								<td>'; echo $r->points, '</td>
 								<td>'; echo $r->startDate, '</td>
