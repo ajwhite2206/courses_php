@@ -43,7 +43,7 @@
 							//echo $r->subject, 'br>'; } << better way to access objects
 				
 					echo '<tr>
-								<td>'; echo $r->subject, '</td>
+								<td>'; echo "<a href='courses_description.php?CID=$r->subject'>$r->subject</a>", '</td>
 								<td>'; echo $r->points, '</td>
 								<td>'; echo $r->startDate, '</td>
 								<td>'; echo $r->startTime, '</td>
