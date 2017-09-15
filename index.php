@@ -6,38 +6,58 @@
 <html>
 
 <head>
-	<!-- <link type="text/css" href="styles/defaultstyle.css" rel="stylesheet" media="screen" />
-	<link type="text/css" href="styles/courses.css" rel="stylesheet" media="screen" /> -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-
+	<!-- <link type="text/css" href="styles/defaultstyle.css" rel="stylesheet" media="screen" /> -->
+	<link type="text/css" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cerulean/bootstrap.min.css" rel="stylesheet" media="screen" />
+	
 	<title>Professional Development and Training || Lewis-Clark State College</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 
 <body>
 
-	<div id="container">
-		<div id="banner">
-			<!--Start of the header, and LCSC logo image -->
-			<div class="auto-style2">
-				<a href="http://connect.lcsc.edu/pdt"> <img alt="LCSC Blue Flag Logo" height="63" src="images/LCSCLogo-small.jpg" width="194"> </a>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.php">PDT Website</a>
+    </div>
 
-				<span class="auto-style1">
-					<strong><br>Professional Development &amp; Training (PDT)</strong>
-				</span>
-			</div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="courses.php">courses <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="login.php">signin</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-			<!-- strip just below banner -->
-			<h1>Login page</h1>
-		</div>
 
-		<div class="scrollmenu">
-  <a href="index.php">Home</a>
-  <a href="login.php">Login page</a>
-  <a href="courses.php">Courses</a>
-  <a href="passreset.php">Password reset</a>
-  ...
-</div>
 
 		<div id="wrapper">
 			<body>
@@ -51,7 +71,7 @@
 			</body>
 		</div>
 		<div id="footer">
-			<h1>Lewis-Clark State College  ||  Professional Development and Training  ||  For more information please contact: jcrea@lcsc.edu</h1>
+			
 		</div>
 	</div>
 </body>
