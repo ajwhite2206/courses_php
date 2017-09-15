@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 
 <head>
 	<link type="text/css" href="styles/defaultstyle.css" rel="stylesheet" media="screen" />
-	<link type="text/css" href="styles/courses.css" rel="stylesheet" media="screen" />
+	<link type="text/css" href="styles/description.css" rel="stylesheet" media="screen" />
 	<title>Professional Development and Training || Lewis-Clark State College</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
@@ -26,36 +26,53 @@
 
 		<div id="wrapper">
 			<table>
-				<th scope="row">Subject</th>
-				<th scope="row">Start Date</th>
-				<th scope="row">End Date</th>
-				<th scope="row">Start Time</th>
-				<th scope="row">End Time</th>
-				<th scope="row">Instructor</th>
-				<th scope="row">Location</th>
-				<th scope="row">Resources</th>
-				<th scope="row">Description</th>
-
-			<?php
-			include 'datalogin.php';
-			session_start();
-			$sub = $_GET['CID'];
-			$query = $conn->query("SELECT * FROM tblCourses WHERE subject = '$sub'");
-			while($r = $query->fetch(PDO::FETCH_OBJ)){
-
-				echo '	<tr>
-					<td>'; echo $r->subject, '</td>
-					<td>'; echo $r->startDate, '</td>
-					<td>'; echo $r->startTime, '</td>
-					<td>'; echo $r->category, '</td>
-					<td>'; echo $r->instructor, '</td>
-					<td>'; echo $r->location, '</td>
-					<td>'; echo $r->resources, '</td>
-					<td>'; echo $r->description, '</td>
-					</tr>';
-			}
-		?>
+				<?php
+				include 'datalogin.php';
+				session_start();
+				$cid = $_GET['CID'];
+				$query = $conn->query("SELECT * FROM tblCourses WHERE CourseID = $cid");
+				while($r = $query->fetch(PDO::FETCH_OBJ)){
+					echo '<tr>
+						<td>Subject</td>
+						<td>'; echo $r->subject, '</td>
+						</tr>
+						<tr>
+						<td>Start Date</td>
+						<td>'; echo $r->startDate, '</td>
+						</tr>
+						<tr>
+						<td>End Date</td>
+						<td>'; echo $r->endDate, '</td>
+						</tr>
+						<tr>
+						<td>Start Time</td>
+						<td>'; echo $r->startTime, '</td>
+						</tr>
+						<tr>
+						<td>End Time</td>
+						<td>'; echo $r->endTime, '</td>
+						</tr>
+						<tr>
+						<td>Instructor</td>
+						<td>'; echo $r->instructor, '</td>
+						</tr>
+						<tr>
+						<td>Location</td>
+						<td>'; echo $r->location, '</td>
+						</tr>
+						<tr>
+						<td>Resources</td>
+						<td>'; echo $r->resources, '</td>
+						</tr>
+						<tr>
+						<td>Description</td>
+						<td>'; echo $r->description, '</td>
+						</tr>';
+					}
+					?>
+			</table>
 		</div>
-
+	</div>
 </body>
+
 </html>

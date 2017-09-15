@@ -25,25 +25,25 @@
 		</div>
 
 		<div id="wrapper">
-				<table id="tblView">
-					<tr id="tblViewHeader">
-						<th>Course Title</th>
-						<th>Points</th>
-						<th>Date</th>
-						<th>Time</th>
-						<th>Category</th>
-						<th>Instructor</th>
-						<th>Location</th>
-					</tr>
+			<table id="tblView">
+				<tr id="tblViewHeader">
+					<th>Course Title</th>
+					<th>Points</th>
+					<th>Date</th>
+					<th>Time</th>
+					<th>Category</th>
+					<th>Instructor</th>
+					<th>Location</th>
+				</tr>
 
-					<?php
+				<?php
 						include 'datalogin.php';
 						$query = $conn->query('SELECT * FROM tblCourses WHERE startDate > #1/1/2017#');
 						while($r = $query->fetch(PDO::FETCH_OBJ)) {
 							//echo $r->subject, 'br>'; } << better way to access objects
-				
+
 					echo '<tr>
-								<td>'; echo "<a href='courses_description.php?CID=$r->subject'>$r->subject</a>", '</td>
+								<td>'; echo "<a href='courses_description.php?CID=$r->CourseID'>$r->subject</a>", '</td>
 								<td>'; echo $r->points, '</td>
 								<td>'; echo $r->startDate, '</td>
 								<td>'; echo $r->startTime, '</td>
@@ -51,11 +51,11 @@
 								<td>'; echo $r->instructor, '</td>
 								<td>'; echo $r->location, '</td>
 							</tr>';
-					
+
 						}
 					?>
 
-				</table>
+			</table>
 
 			<br /><br />
 		</div>
