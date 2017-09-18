@@ -7,7 +7,7 @@
 
 <head>
 	<!-- <link type="text/css" href="styles/defaultstyle.css" rel="stylesheet" media="screen" /> -->
-	<link type="text/css" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cerulean/bootstrap.min.css" rel="stylesheet" media="screen" />
+	<link type="text/css" href="https://bootswatch.com/flatly/bootstrap.min.css" rel="stylesheet" media="screen" />
 	
 	<title>Professional Development and Training || Lewis-Clark State College</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
