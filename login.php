@@ -34,6 +34,7 @@ endif;
 <html>
 
 <?php include("includes/header.html"); ?>
+<body>
 
 	<div id="container">
 		
