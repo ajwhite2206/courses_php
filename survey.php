@@ -10,27 +10,30 @@ require 'datalogin.php';
 
 $message = '';
 
-if(!empty($_POST['date']) && !empty($_POST['rating']) && !empty($_POST['recommend'])):
-	$mock = 5;
+if(!empty($_POST['date']) /*&& !empty($_POST['rating']) && !empty($_POST['recommend'])*/):	
+	// setting variables for the query
+	if($_POST['recommend'] == -1){
+		$trueorfalse = 'Yes';
+	} else {
+		$trueorfalse = 'No';
+	}
+	
+	$date =  $_POST['date'];
+	$rating = $_POST['rating'];
+	$recommend = $_POST['recommend'];
+	$comment = $_POST['comment'];
+	
+
+	
 	
 	// Enter the new user in the database
-	$sql = "INSERT INTO evaluation (userID, Question1, Question2, Question3, Question4) VALUES (:email, :q1, :q2, :q3, :q4)";
-	$stmt = $conn->prepare($sql);
-
-	/*$stmt->bindParam(':courseid', $); we need to pass course id from somewhere*/
-	$stmt->bindParam(':email', $_SESSION['email']);
-	$stmt->bindParam(':q1', $_POST['date']);
-	$stmt->bindParam(':q2', $_POST['rating']);
-	$stmt->bindParam(':q3', $_POST['recommend']);
-	$stmt->bindParam(':q4', $_POST['comment']);
-
-	if( $stmt->execute() ):
-		$message = 'Submission was successful';
+	$query = $conn->query("INSERT INTO evaluation (CourseID, userID, submissionDate, Question1, Question2, Question3, Question4) VALUES ('111', '111', date(), '$date', '$rating', '$recommend', '$comment')");
+/*
 	else:
 		$message = 'Sorry, there was an error with your submission';
 	endif;
 		
-	echo $message;
+	echo $message; */
 
 endif;
 
