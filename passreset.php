@@ -2,6 +2,7 @@
 <body>
 	<?php 
 		include 'datalogin.php';
+		include("includes/header.html");
 		session_start(); 
 		
 		//loop to make sure form was filled out correctly
@@ -18,7 +19,6 @@
                     while($r = $query->fetch(PDO::FETCH_OBJ)){
                         echo '<p>Successfully changed password.</p>';
                     }
-					
 					
 					
 				} else {

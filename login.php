@@ -36,20 +36,13 @@ endif;
 <?php include("includes/header.html"); ?>
 <body>
 
-	<div id="container">
-		
-
-
-		<div id="wrapper">
-			<body>
-				<div class="container">
+		<div class="container">
 
 					<?php if(!empty($message)): ?>
 		<p><?= $message ?></p>
 	<?php endif; ?>
 
-	<h1>Login</h1>
-	<span>or <a href="register.php">register here</a></span>
+	<h1>Login</h1> <h2>or <a href="register.php">register here</a></h2>
 
 	<form action="login.php" method="POST">
 		
@@ -63,7 +56,7 @@ endif;
 				</div> <!-- /container -->
 
 			<br>
-			</body>
+			
 		</div>
 		<div id="footer">
 			
