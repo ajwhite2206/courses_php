@@ -10,39 +10,35 @@ require 'datalogin.php';
 
 $message = '';
 
-if(!empty($_POST['date']) /*&& !empty($_POST['rating']) && !empty($_POST['recommend'])*/):	
+if(!empty($_POST['date']) /*&& !empty($_POST['rating']) && !empty($_POST['recommend'])*/):
 	// setting variables for the query
 	if($_POST['recommend'] == -1){
 		$trueorfalse = 'Yes';
 	} else {
 		$trueorfalse = 'No';
 	}
-	
+
 	$date =  $_POST['date'];
 	$rating = $_POST['rating'];
 	$recommend = $_POST['recommend'];
 	$comment = $_POST['comment'];
-	
 
-	
-	
 	// Enter the new user in the database
 	$query = $conn->query("INSERT INTO evaluation (CourseID, userID, submissionDate, Question1, Question2, Question3, Question4) VALUES ('111', '111', date(), '$date', '$rating', '$recommend', '$comment')");
 /*
 	else:
 		$message = 'Sorry, there was an error with your submission';
 	endif;
-		
+
 	echo $message; */
 
 endif;
-include("includes/header.html"); 
+include("includes/header.html");
 /* include("_header.php");  NOT OF USE TO USE CURRENTLY  */?>
     <div class="container">
 
     <h2>Leave Feedback for <?php /* how is this form connected to the others?? echo $course["subject"]; */ ?></h2>
     <p>Thank you.</p>
-
 
     <form method="post" action="survey.php" class="survey">
 
