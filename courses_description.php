@@ -1,31 +1,14 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-	<link type="text/css" href="styles/defaultstyle.css" rel="stylesheet" media="screen" />
-	<link type="text/css" href="styles/description.css" rel="stylesheet" media="screen" />
-	<title>Professional Development and Training || Lewis-Clark State College</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-</head>
+<?php include("includes/header.html"); ?>
 
 <body>
-	<div id="container">
-		<div id="banner">
-			<!--Start of the header, and LCSC logo image -->
-			<div class="auto-style2">
-				<a href="http://connect.lcsc.edu/pdt"> <img alt="LCSC Blue Flag Logo" height="63" src="images/LCSCLogo-small.jpg" width="194"> </a>
-
-				<span class="auto-style1">
-					<strong><br>Professional Development &amp; Training (PDT)</strong>
-				</span>
-			</div>
-
-			<!-- strip just below banner -->
-			<h1>training success daily</h1>
-		</div>
+	
 
 		<div id="wrapper">
-			<table>
+			<table class="table table-striped table-hover ">
+  			
 				<?php
 				include 'datalogin.php';
 				session_start();
