@@ -5,7 +5,7 @@
 <?php include("includes/header.html"); ?>
 
 <body>
-	<div id="container">
+	<div class="container">
 		
 
 		<table class="table table-striped table-hover ">

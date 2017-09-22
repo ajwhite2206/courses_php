@@ -6,7 +6,7 @@
 <body>
 	
 
-		<div id="wrapper">
+		<div class=="container">
 			<table class="table table-striped table-hover ">
   			
 				<?php
@@ -54,7 +54,6 @@
 					}
 					?>
 			</table>
-		</div>
 	</div>
 </body>
 
