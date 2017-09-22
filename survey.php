@@ -36,8 +36,9 @@ if(!empty($_POST['date']) /*&& !empty($_POST['rating']) && !empty($_POST['recomm
 	echo $message; */
 
 endif;
-
+include("includes/header.html"); 
 /* include("_header.php");  NOT OF USE TO USE CURRENTLY  */?>
+
 
     <h2>Leave Feedback for <?php /* how is this form connected to the others?? echo $course["subject"]; */ ?></h2>
     <p>Thank you.</p>
