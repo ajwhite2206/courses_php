@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 
-<?php include("includes/header.html"); ?>
+<?php 
+include("includes/header.html"); 
+include 'datalogin.php';
+?>
 
 <body>
 	
@@ -10,12 +13,12 @@
 			<table class="table table-striped table-hover ">
   			
 				<?php
-				include 'datalogin.php';
+				
 				session_start();
 				$cid = $_GET['CID'];
 				$query = $conn->query("SELECT * FROM tblCourses WHERE CourseID = $cid");
 				while($r = $query->fetch(PDO::FETCH_OBJ)){
-					echo '<tr>
+					echo '<tbody><tr>
 						<td>Subject</td>
 						<td>'; echo $r->subject, '</td>
 						</tr>
@@ -50,7 +53,7 @@
 						<tr>
 						<td>Description</td>
 						<td>'; echo $r->description, '</td>
-						</tr>';
+						</tr></tbody>';
 					}
 					?>
 			</table>
