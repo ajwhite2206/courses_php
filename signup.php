@@ -1,9 +1,8 @@
+<!DOCTYPE html>
 <?php
 	include 'datalogin.php';
-
 ?>
-<!DOCTYPE html>
-<html>
+	<html>
 
 	<head>
 		<link type="text/css" href="styles/defaultstyle.css" rel="stylesheet" media="screen" />
@@ -29,23 +28,20 @@
 			</div>
 
 			<div id="wrapper">
+
 				<body>
 					<div class="container">
-
-
 						<a href="login.php" name="Sign Up" id="signup" class="btn btn-lg btn-primary btn-block" type="submit">Sign In</a>
 						<a href="recovery.php" name="Sign Up" id="signup" class="btn btn-lg btn-primary btn-block" type="submit">Forgot Account?</a>
-
-					</div> <!-- /container -->
-	
-				<br>
+					</div>
+					<!-- /container -->
 				</body>
 			</div>
-			
+
 			<div id="footer">
 				<h1>Lewis-Clark State College  ||  Professional Development and Training  ||  For more information please contact: jcrea@lcsc.edu</h1>
 			</div>
 		</div>
 	</body>
 
-</html>
+	</html>

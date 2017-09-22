@@ -1,6 +1,3 @@
-<?php
-	include 'datalogin.php';
-?>
 <!DOCTYPE html>
 <html>
 
@@ -36,12 +33,12 @@
 								<input name="myemail" id="myemail" type="text" class="form-control" placeholder="Email" autofocus>
 								<button name="Submit" id="submit" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 							</form>
-							
+
 							<a href="signup.php" name="Sign Up" id="signup" class="btn btn-lg btn-primary btn-block" type="submit">Create new account</a>
-							</br>	
+							</br>
 							<a href="login.php" name="login" id="login" class="btn btn-lg btn-primary btn-block" type="submit">Existing Account</a>
 						</div> <!-- /container -->
-						
+
 						<br>
 
 					</body>
