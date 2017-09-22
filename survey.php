@@ -38,10 +38,11 @@ if(!empty($_POST['date']) /*&& !empty($_POST['rating']) && !empty($_POST['recomm
 endif;
 include("includes/header.html"); 
 /* include("_header.php");  NOT OF USE TO USE CURRENTLY  */?>
-
+    <div class="container">
 
     <h2>Leave Feedback for <?php /* how is this form connected to the others?? echo $course["subject"]; */ ?></h2>
     <p>Thank you.</p>
+
 
     <form method="post" action="survey.php" class="survey">
 
@@ -91,5 +92,6 @@ include("includes/header.html");
         <input type="submit" value="Submit">
 
     </form>
+    </div>
 
 <?php /* include("_footer.php");  currently not of any use*/?>
