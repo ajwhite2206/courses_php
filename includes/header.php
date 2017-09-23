@@ -40,16 +40,21 @@ echo '
           </ul>
         </li>
       </ul>
+ 
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="login.php">signin</a></li>
+      <ul class="nav navbar-nav navbar-right">';
+      if( isset($_SESSION['email']) ){
+        echo '  <li><a href="logout.php">sign out</a></li>';
+      } else {
+        echo ' <li><a href="login.php">signin</a></li>'; }
+        echo '
       </ul>
     </div>
   </div>
-</nav>';
+</nav>'; 
 ?>
