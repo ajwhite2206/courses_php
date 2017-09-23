@@ -1,6 +1,7 @@
 <?php
 require 'datalogin.php';
 session_start();
+include("includes/header.html");
 
 if( isset($_SESSION['email']) ){
 	header("Location: index.php");
@@ -29,8 +30,6 @@ endif;
 
 <!DOCTYPE html>
 <html>
-
-<?php include("includes/header.html"); ?>
 
 <body>
 	<div id="container">

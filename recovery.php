@@ -1,7 +1,8 @@
 <<<<<<< HEAD
 <?php
 	include 'datalogin.php';
-	include("includes/header.html");
+  	include("includes/header.html");
+  	session_start();
 ?>
 =======
 >>>>>>> 955d6c8f2e2c45475b9044e7fe4fbd572e6b2407

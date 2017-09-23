@@ -1,12 +1,12 @@
 <?php
-
-session_start();
+  include 'datalogin.php';
+  include("includes/header.html");
+  session_start();
 
 if( isset($_SESSION['email']) ){
 	//header("Location: index.php");
 }
 
-require 'datalogin.php';
 
 $message = '';
 
@@ -33,7 +33,7 @@ if(!empty($_POST['date']) /*&& !empty($_POST['rating']) && !empty($_POST['recomm
 	echo $message; */
 
 endif;
-include("includes/header.html");
+
 /* include("_header.php");  NOT OF USE TO USE CURRENTLY  */?>
     <div class="container">
 
