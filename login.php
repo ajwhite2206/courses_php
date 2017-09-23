@@ -1,32 +1,24 @@
 <?php
 	include("includes/header.php");
-
 if( isset($_SESSION['email']) ){
 	header("Location: index.php");
 }
-
-
 if(!empty($_POST['email']) && !empty($_POST['password'])):
 	
 	$records = $conn->prepare('SELECT email,password FROM tblStudents WHERE email = :email');
 	$records->bindParam(':email', $_POST['email']);
 	$records->execute();
 	$results = $records->fetch(PDO::FETCH_ASSOC);
-
 	$message = '';
 		if($_POST['password']  == $results['password']) {
-
 		$_SESSION['email'] = $results['email'];
 		//header("Location: /");
 		echo $_SESSION['email'];
 		header("Location: index.php");
-
 	} else {
 		$message = 'Sorry, those credentials do not match';
 	}
-
 endif;
-
 ?>
 <!DOCTYPE html>
 <html>
