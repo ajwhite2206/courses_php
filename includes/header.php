@@ -3,7 +3,7 @@
   session_start();
 echo '
 <head>
-	<!-- <link type="text/css" href="styles/defaultstyle.css" rel="stylesheet" media="screen" /> -->
+
 	<link type="text/css" href="https://bootswatch.com/flatly/bootstrap.min.css" rel="stylesheet" media="screen" />
 	
 	<title>Professional Development and Training || Lewis-Clark State College</title>
