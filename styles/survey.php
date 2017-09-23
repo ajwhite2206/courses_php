@@ -33,20 +33,23 @@ endif;
 
 /* include("_header.php");  NOT OF USE TO USE CURRENTLY  */?>
     <div class="container">
-    <form method="POST" action="survey.php" role="form" class="form-hoizontal">
-    <fieldset>
 
+    <h2>Leave Feedback for <?php /* how is this form connected to the others?? echo $course["subject"]; */ ?></h2>
+    <p>Thank you.</p>
 
-    <legend>Survey</legend>
-    <div class="form-group">
+    <form method="post" action="survey.php" class="survey">
+
         <input type="hidden" name="course-id" value="<?php /* again should we use this? echo $course_id;  */?>">
         <input type="hidden" name="post-feedback" value="1">
 
+        <fieldset>
             <legend>When did you take the course?</legend>
             <label for="date">
                 <input type="date" id="date" name="date">
             </label>
-       
+        </fieldset>
+
+        <fieldset>
             <legend>Please rate this course with 1 being the lowest and 5 being the highest.</legend>
             <label for="rating">
                 <select name="rating" id="rating">
@@ -57,7 +60,9 @@ endif;
                     <option value="5">5</option>
                 </select>
             </label>
-       
+        </fieldset>
+
+        <fieldset>
             <legend>Would you recommend this course to a friend?</legend>
             <label for="recommend-yes">
                 <input type="radio" name="recommend" id="recommend-yes" value="true">
@@ -68,15 +73,18 @@ endif;
                 <input type="radio" name="recommend" id="recommend-no" value="false">
                 No
             </label>
-     
-            <div class="form-group">
-              <div class="col-lg-10 col-lg-offset-2">
-                <button type="reset" class="btn btn-default">Cancel</button>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
-            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Please leave any additional feedback here.</legend>
+            <label for="comment">
+                <textarea name="comment" id="comment"></textarea>
+            </label>
+        </fieldset>
+
+        <input type="submit" value="Submit">
 
     </form>
-    </fieldset></div>
-    </form>
     </div>
+
+<?php /* include("_footer.php");  currently not of any use*/?>
