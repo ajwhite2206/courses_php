@@ -1,7 +1,7 @@
 <?php
 	include 'datalogin.php';
   include("includes/header.html");
-
+  session_start();
 ?>
 <!DOCTYPE html>
 <html>

@@ -1,9 +1,10 @@
+<?php
+  include 'datalogin.php';
+  include("includes/header.html");
+  session_start();
+?>
 <!DOCTYPE html>
 <html>
-
-
-<?php include("includes/header.html"); ?>
-
 <body>
 	<div class="container">
 		
@@ -22,7 +23,6 @@
 			</thead>
 
 				<?php
-						include 'datalogin.php';
 						$query = $conn->query('SELECT * FROM tblCourses WHERE startDate > #1/1/2017#');
 						while($r = $query->fetch(PDO::FETCH_OBJ)) {
 							//echo $r->subject, 'br>'; } << better way to access objects
