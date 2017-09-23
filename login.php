@@ -19,6 +19,7 @@ if(!empty($_POST['email']) && !empty($_POST['password'])):
 		$_SESSION['email'] = $results['email'];
 		//header("Location: /");
 		echo $_SESSION['email'];
+		header("Location: index.php");
 
 	} else {
 		$message = 'Sorry, those credentials do not match';
