@@ -1,10 +1,11 @@
+<?php
+	include 'datalogin.php';
+  	include("includes/header.html");
+  	session_start();
+?>
+
 <!DOCTYPE html>
 <html>
-
-<?php 
-include("includes/header.html"); 
-include 'datalogin.php';
-?>
 
 <body>
 	
@@ -13,8 +14,6 @@ include 'datalogin.php';
 			<table class="table table-striped table-hover ">
   			
 				<?php
-				
-				session_start();
 				$cid = $_GET['CID'];
 				$query = $conn->query("SELECT * FROM tblCourses WHERE CourseID = $cid");
 				while($r = $query->fetch(PDO::FETCH_OBJ)){
