@@ -50,7 +50,7 @@ echo '
       if( isset($_SESSION['email']) ){
         echo '  <li><a href="logout.php">sign out</a></li>';
       } else {
-        echo ' <li><a href="login.php">signin</a></li>'; }
+        echo ' <li><a href="login.php">sign in</a></li>'; }
         echo '
       </ul>
     </div>
