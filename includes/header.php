@@ -5,6 +5,9 @@ echo '
 <head>
 
 	<link type="text/css" href="https://bootswatch.com/flatly/bootstrap.min.css" rel="stylesheet" media="screen" />
+
+          <link rel="shortcut icon" type="image/png" href="images/logo.ico">
+
 	
 	<title>Professional Development and Training || Lewis-Clark State College</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
