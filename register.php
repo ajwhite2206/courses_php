@@ -1,7 +1,6 @@
 <?php
-require 'datalogin.php';
-session_start();
-include("includes/header.html");
+
+include("includes/header.php");
 
 if( isset($_SESSION['email']) ){
 	header("Location: index.php");
@@ -32,15 +31,11 @@ endif;
 <html>
 
 <body>
-	<div id="container">
-
-		<div id="wrapper">
-			<body>
-				<div class="container">
+	<div class="container">
 
 					<?php if(!empty($message)): ?>
-		<p><?= $message ?></p>
-	<?php endif; ?>
+						<p><?= $message ?></p>
+					<?php endif; ?>
 
 	<h1>Register</h1>
 	<span>or <a href="login.php">login here</a></span>
@@ -55,13 +50,12 @@ endif;
 	</form>
 
 			<br>
-			</body>
+			
 		</div>
 		<div id="footer">
 
 		</div>
-	</div>
-</div>
+
 </body>
 
 </html>

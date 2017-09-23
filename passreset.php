@@ -1,15 +1,5 @@
-<html>
-<body>
 	<?php
-		include 'datalogin.php';
-<<<<<<< HEAD
-		include("includes/header.html");
-		session_start(); 
-		
-=======
-		session_start();
-
->>>>>>> 955d6c8f2e2c45475b9044e7fe4fbd572e6b2407
+		include("includes/header.php");
 		//loop to make sure form was filled out correctly
 		$code = $_SESSION['code'];
 		$email = $_SESSION['email'];
@@ -24,12 +14,7 @@
                     while($r = $query->fetch(PDO::FETCH_OBJ)){
                         echo '<p>Successfully changed password.</p>';
                     }
-<<<<<<< HEAD
-					
-					
-=======
 
->>>>>>> 955d6c8f2e2c45475b9044e7fe4fbd572e6b2407
 				} else {
 					echo 'Passwords do not match.';
 				}
@@ -41,6 +26,9 @@
 		}
 
 	?>
+
+<html>
+<body>
 
 	<!-- beginning of HTML form -->
 	<form action="passreset.php" method="get">

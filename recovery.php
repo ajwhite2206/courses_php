@@ -1,11 +1,7 @@
-<<<<<<< HEAD
+
 <?php
-	include 'datalogin.php';
-  	include("includes/header.html");
-  	session_start();
+  	include("includes/header.php");
 ?>
-=======
->>>>>>> 955d6c8f2e2c45475b9044e7fe4fbd572e6b2407
 <!DOCTYPE html>
 <html>
 
@@ -16,19 +12,15 @@
 							<form action="checkemail.php" method="post">
 								<h2 class="form">Reset Password:</h2>
 								<input name="myemail" id="myemail" type="text" class="form-control" placeholder="Email" autofocus>
-								<button name="Submit" id="submit" class="btn primary btn-default" type="submit">Sign in</button>
+								<button name="Submit" id="submit" class="btn primary btn-default" type="submit">Check Email</button>
 							</form>
-<<<<<<< HEAD
-							
-							<a href="signup.php" name="Sign Up" id="signup" class="btn btn-default" type="submit">Create new account</a>
-							<br>	
-							<a href="login.php" name="login" id="login" class="btn btn-default " type="submit">Existing Account</a>
-=======
 
-							<a href="signup.php" name="Sign Up" id="signup" class="btn btn-lg btn-primary btn-block" type="submit">Create new account</a>
-							</br>
-							<a href="login.php" name="login" id="login" class="btn btn-lg btn-primary btn-block" type="submit">Existing Account</a>
->>>>>>> 955d6c8f2e2c45475b9044e7fe4fbd572e6b2407
+						
+							<a href="register.php" name="Sign Up" id="signup" class="btn btn-default" type="submit">Create new account</a>
+							</n>	
+							<a href="login.php" name="login" id="login" class="btn btn-default " type="submit">Existing Account</a>
+
+
 						</div> <!-- /container -->
 
 						<br>

@@ -1,11 +1,10 @@
 <?php
-	session_start();
+	include("includes/header.php");
 
 if( isset($_SESSION['email']) ){
 	header("Location: index.php");
 }
 
-require 'datalogin.php';
 
 if(!empty($_POST['email']) && !empty($_POST['password'])):
 	
@@ -16,8 +15,6 @@ if(!empty($_POST['email']) && !empty($_POST['password'])):
 
 	$message = '';
 		if($_POST['password']  == $results['password']) {
-
-	//if(count($results) > 0 && password_verify($_POST['password'], $results['password']) ){
 
 		$_SESSION['email'] = $results['email'];
 		//header("Location: /");
@@ -33,7 +30,6 @@ endif;
 <!DOCTYPE html>
 <html>
 
-<?php include("includes/header.html"); ?>
 <body>
 
 		<div class="container">

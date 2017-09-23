@@ -2,8 +2,7 @@
 	require('PHPMailer/src/PHPMailer.php');
 	require('PHPMailer/src/Exception.php');
 	require('PHPMailer/src/SMTP.php');
-	include 'datalogin.php';
-	session_start();
+	include("includes/header.php");
 
 	//Variable carried over from form in recovery
 	$email = $_POST['myemail'];
@@ -71,7 +70,7 @@
 		//exception text if email was not found in data base
 		echo 'No user account with this email';
 		?>
-		<a href="signup.php" name="Sign Up" id="signup" class="btn btn-lg btn-primary btn-block" type="submit">Create new account?</a>
+		<a href="register.php" name="Sign Up" id="signup" class="btn btn-lg btn-primary btn-block" type="submit">Create new account?</a>
 		<?php
 	}
 

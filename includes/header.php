@@ -1,4 +1,7 @@
-
+  <?php
+  include 'datalogin.php';
+  session_start();
+echo '
 <head>
 	<!-- <link type="text/css" href="styles/defaultstyle.css" rel="stylesheet" media="screen" /> -->
 	<link type="text/css" href="https://bootswatch.com/flatly/bootstrap.min.css" rel="stylesheet" media="screen" />
@@ -48,4 +51,5 @@
       </ul>
     </div>
   </div>
-</nav>
+</nav>';
+?>
