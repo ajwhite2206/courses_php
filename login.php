@@ -1,60 +1,55 @@
 <?php
-	include 'datalogin.php';
-
+	include("includes/header.php");
+if( isset($_SESSION['email']) ){
+	header("Location: index.php");
+}
+if(!empty($_POST['email']) && !empty($_POST['password'])):
+	
+	$records = $conn->prepare('SELECT email,password FROM tblStudents WHERE email = :email');
+	$records->bindParam(':email', $_POST['email']);
+	$records->execute();
+	$results = $records->fetch(PDO::FETCH_ASSOC);
+	$message = '';
+		if($_POST['password']  == $results['password']) {
+		$_SESSION['email'] = $results['email'];
+		//header("Location: /");
+		echo $_SESSION['email'];
+		header("Location: index.php");
+	} else {
+		$message = 'Sorry, those credentials do not match';
+	}
+endif;
 ?>
 <!DOCTYPE html>
 <html>
 
-<head>
-	<link type="text/css" href="styles/defaultstyle.css" rel="stylesheet" media="screen" />
-	<link type="text/css" href="styles/courses.css" rel="stylesheet" media="screen" />
-	<title>Professional Development and Training || Lewis-Clark State College</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-</head>
-
 <body>
-	<div id="container">
-		<div id="banner">
-			<!--Start of the header, and LCSC logo image -->
-			<div class="auto-style2">
-				<a href="http://connect.lcsc.edu/pdt"> <img alt="LCSC Blue Flag Logo" height="63" src="images/LCSCLogo-small.jpg" width="194"> </a>
 
-				<span class="auto-style1">
-					<strong><br>Professional Development &amp; Training (PDT)</strong>
-				</span>
-			</div>
+		<div class="container">
 
-			<!-- strip just below banner -->
-			<h1>Login page</h1>
-		</div>
+					<?php if(!empty($message)): ?>
+		<p><?= $message ?></p>
+	<?php endif; ?>
 
-		<div id="wrapper">
-				<body>
-    <div class="container">
+	<h1>Login</h1> <h2>or <a href="register.php">register here</a></h2>
 
-      <form class="form-signin" name="form1" method="post" action="checklogin.php">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <input name="myusername" id="myusername" type="text" class="form-control" placeholder="Username" autofocus>
-        <input name="mypassword" id="mypassword" type="password" class="form-control" placeholder="Password">
-        <!-- The checkbox remember me is not implemented yet...
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-        -->
-        <button name="Submit" id="submit" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-	    <a href="signup.php" name="Sign Up" id="signup" class="btn btn-lg btn-primary btn-block" type="submit">Create new account</a>
+	<form action="login.php" method="POST">
+		
+		<input type="text" placeholder="Enter your email" name="email">
+		<input type="password" placeholder="and password" name="password">
 
-        <div id="message"></div>
-      </form>
+		<input type="submit">
 
-    </div> <!-- /container -->
+	</form>
 
-    <br>
+				</div> <!-- /container -->
 
-  </body>
+			<br>
+			
 		</div>
 		<div id="footer">
-			<h1>Lewis-Clark State College  ||  Professional Development and Training  ||  For more information please contact: jcrea@lcsc.edu</h1></div>
+			
+		</div>
 	</div>
 </body>
 
