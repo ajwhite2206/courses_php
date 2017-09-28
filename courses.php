@@ -5,7 +5,7 @@
 <html>
 <body>
 	<div class="container">
-		
+
 
 		<table class="table table-striped table-hover ">
   			<thead>
@@ -23,13 +23,13 @@
 				<?php
 						$query = $conn->query('SELECT * FROM tblCourses WHERE startDate > #1/1/2017#');
 						while($r = $query->fetch(PDO::FETCH_OBJ)) {
-							//echo $r->subject, 'br>'; } << better way to access objects
+              $stDate = date_create($r->startDate);
 
 					echo '<tbody>
 							<tr>
 								<td>'; echo "<a href='courses_description.php?CID=$r->CourseID'>$r->subject</a>", '</td>
 								<td>'; echo $r->points, '</td>
-								<td>'; echo $r->startDate, '</td>
+								<td>'; echo date_format($stDate, "m-d-Y"), '</td>
 								<td>'; echo $r->startTime, '</td>
 								<td>'; echo $r->category, '</td>
 								<td>'; echo $r->instructor, '</td>
@@ -44,7 +44,7 @@
 			<br /><br />
 		</div>
 		<div id="footer">
-			
+
 	</div>
 </body>
 
