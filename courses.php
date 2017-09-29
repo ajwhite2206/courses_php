@@ -17,6 +17,7 @@
 					<th>Category</th>
 					<th>Instructor</th>
 					<th>Location</th>
+					<th>Register</th>
 				</tr>
 			</thead>
 
@@ -34,6 +35,7 @@
 								<td>'; echo $r->category, '</td>
 								<td>'; echo $r->instructor, '</td>
 								<td>'; echo $r->location, '</td>
+								<td>'; echo "<a href='course_registration.php?CID=$r->CourseID'>Register</a>", '</td>
 							</tr></tbody>';
 
 						}
