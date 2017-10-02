@@ -6,6 +6,10 @@ echo '
 
 	<link type="text/css" href="https://bootswatch.com/flatly/bootstrap.min.css" rel="stylesheet" media="screen" />
 
+  <link type="text/css" href="https://bootswatch.com/flatly/bootstrap.css" rel="stylesheet" media="screen" />
+
+  <link type="text/css" https://bootswatch.com/flatly/variables.less" rel="stylesheet" media="screen" />
+
           <link rel="shortcut icon" type="image/png" href="images/logo.ico">
 
 	
@@ -30,9 +34,9 @@ echo '
       <ul class="nav navbar-nav">
         <li class="active"><a href="courses.php">courses <span class="sr-only">(current)</span></a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
+            <li><a href="mycourses.php">My courses</a></li>
             <li><a href="#">Another action</a></li>
             <li><a href="#">Something else here</a></li>
             <li class="divider"></li>

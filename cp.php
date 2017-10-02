@@ -1,24 +1,50 @@
 <?php
   include("includes/header.php");
 ?>
-<!DOCTYPE html>
 <html>
-			<body>
-				<div class="container">
-					<div class="jumbotron">
-                <h1>Lewis-Clark State College PDT</h1>
-                <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                <p><a class="btn btn-primary btn-lg">Learn more</a></p>
-          </div>
+<body>
+	<div class="container">
+		
 
-				</div> <!-- /container -->
+		<table class="table table-striped table-hover ">
+  			<thead>
+				<tr>
+					<th>Course Title</th>
+					<th>Points</th>
+					<th>Date</th>
+					<th>Time</th>
+					<th>Category</th>
+					<th>Instructor</th>
+					<th>Location</th>
+				</tr>
+			</thead>
 
-			<br>
-			</body>
-	
+				<?php
+						$query = $conn->query('SELECT * FROM tblCourses WHERE startDate > #1/1/2017#');
+						while($r = $query->fetch(PDO::FETCH_OBJ)) {
+							//echo $r->subject, 'br>'; } << better way to access objects
+
+					echo '<tbody>
+							<tr>
+								<td>'; echo "<a href='courses_description.php?CID=$r->CourseID'>$r->subject</a>", '</td>
+								<td>'; echo $r->points, '</td>
+								<td>'; echo $r->startDate, '</td>
+								<td>'; echo $r->startTime, '</td>
+								<td>'; echo $r->category, '</td>
+								<td>'; echo $r->instructor, '</td>
+								<td>'; echo $r->location, '</td>
+							</tr></tbody>';
+
+						}
+					?>
+
+			</table>
+
+			<br /><br />
+		</div>
 		<div id="footer">
 			
-		</div>
 	</div>
+</body>
 
 </html>

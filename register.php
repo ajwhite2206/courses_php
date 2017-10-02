@@ -23,6 +23,7 @@ if(!empty($_POST['email']) && !empty($_POST['password'])):
 	if( $stmt->execute() ):
 		$message = 'Successfully created new user';
 		// This should forward the user to the login page
+	header("Location: login.php");
 	else:
 		$message = 'Sorry there must have been an issue creating your account';
 	endif;
