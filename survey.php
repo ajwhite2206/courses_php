@@ -19,9 +19,12 @@ if(!empty($_POST['date']) /*&& !empty($_POST['rating']) && !empty($_POST['recomm
 	$rating = $_POST['rating'];
 	$recommend = $_POST['recommend'];
 	$comment = $_POST['comment'];
+	$course = $_GET[''];
+	$courseID = $_GET['CID'];
+	$userID = $SESSION['email']
 
 	// Enter the new user in the database
-	$query = $conn->query("INSERT INTO evaluation (CourseID, userID, submissionDate, Question1, Question2, Question3, Question4) VALUES ('111', '111', date(), '$date', '$rating', '$recommend', '$comment')");
+	$query = $conn->query("INSERT INTO evaluation (CourseID, userID, submissionDate, Question1, Question2, Question3, Question4) VALUES ('$courseID', '$userID', date(), '$date', '$rating', '$recommend', '$comment')");
 /*
 	else:
 		$message = 'Sorry, there was an error with your submission';
