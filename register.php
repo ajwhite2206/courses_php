@@ -19,14 +19,14 @@ if(!empty($_POST['email']) && !empty($_POST['password'])):
 	//$stmt->bindParam(':password', password_hash($_POST['password'], PASSWORD_BCRYPT));
 	// Using this for now so that the register and login pages will cooperate.
 	$stmt->bindParam(':password', $_POST['password']);
-
+/* 
 	if( $stmt->execute() ):
 		$message = 'Successfully created new user';
 		// This should forward the user to the login page
 	header("Location: login.php");
 	else:
 		$message = 'Sorry there must have been an issue creating your account';
-	endif;
+	endif; */
 
 endif;
 
