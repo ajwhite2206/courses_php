@@ -30,10 +30,10 @@ echo '
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="courses.php">Courses<span class="sr-only">(current)</span></a></li>
-        <li><a href="register.php">Register<span class="sr-only">(current)</span></a></li>';
+        <li><a href="register.php">Register<span class="sr-only">(current)</span></a></li>
+	<li><a href="recovery.php">Recover Account<span class="sr-only">(current)</span></a></li>';
         if( isset($_SESSION['email']) ){
           echo '<li><a href="mycourses.php">My Courses<span class="sr-only">(current)</span></a></li>';
-          echo '<li><a href="recovery.php">Recover Account<span class="sr-only">(current)</span></a></li>';
         }
       echo '
       </ul>
