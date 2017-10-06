@@ -1,7 +1,7 @@
 <?php
 
 include("includes/header.php");
-
+session_regenerate_id(true);
 if( isset($_SESSION['email']) ){
 	header("Location: index.php");
 }
@@ -9,7 +9,6 @@ if( isset($_SESSION['email']) ){
 $message = '';
 
 if(!empty($_POST['email']) && !empty($_POST['password'])):
-
 	// Enter the new user in the database
 	$sql = "INSERT INTO tblStudents (email, password) VALUES (:email, :password)";
 	$stmt = $conn->prepare($sql);
@@ -19,14 +18,22 @@ if(!empty($_POST['email']) && !empty($_POST['password'])):
 	//$stmt->bindParam(':password', password_hash($_POST['password'], PASSWORD_BCRYPT));
 	// Using this for now so that the register and login pages will cooperate.
 	$stmt->bindParam(':password', $_POST['password']);
-/* 
-	if( $stmt->execute() ):
+
+	// Check if user already exists
+	$em = $_POST['email'];
+	$check = $conn->query("SELECT count(email) as emCount FROM tblStudents WHERE email='$em'");
+	$check->execute();
+	$checkEmail = $check->fetch(PDO::FETCH_ASSOC);
+	// If user exists, the session is destroyed to remove variables and ensure the query will function properly.
+	// If the user doesn't exist, the account is created and the user is sent to the login page.
+	if((int)$checkEmail['emCount'] > 0){
+		echo'<p>The email ', "$em", ' already exists. <br /> If you forgot your password, recover it here: <a href="recovery.php">Recover Password</a></p>';
+		session_destroy();
+	} else {
+		$stmt->execute();
 		$message = 'Successfully created new user';
-		// This should forward the user to the login page
-	header("Location: login.php");
-	else:
-		$message = 'Sorry there must have been an issue creating your account';
-	endif; */
+		header("Location: login.php");
+	}
 
 endif;
 
