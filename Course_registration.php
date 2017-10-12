@@ -3,20 +3,31 @@
 
 <?php 
 include("includes/header.php"); 
-include 'datalogin.php';	
+include 'datalogin.php';
+if($_SESSION['email'] = NULL){
+		header("Location: login.php");
+		die();
+	} 
 ?>
 
 <body>
 
 	<?php
-	$cid = $_GET['CID'];
+	#$date = $_POST['date'];
+	$cid = intval($_GET['CID']);
 	$userEmail = $_SESSION['email'];
-	##$date = $_POST['date'];
-	$query = $conn->query("INSERT INTO registration (CourseID, email) VALUES('$cid', '$userEmail')");
-	##$r = $query->fetch(PDO::FETCH_OBJ);
+	$qCheck = $conn->query("SELECT count(courseID) as idCount FROM registration WHERE courseID = $cid AND email = '$userEmail'");
+	$qCheck->execute();
+	$checkClass = $qCheck->fetch(PDO::FETCH_ASSOC);
+	//Check if already registered.
+	if((int)$checkClass['idCount'] > 0){
+		print("You are already regstered to this course");
+	} else{
+		$query = $conn->query("INSERT INTO registration (courseID, email) VALUES('$cid', '$userEmail')");
+		print("You are now registered to this course");
+	}
+	
 	?>
-
-<p>Successfully registered to this course.</p>
 
 
 </body>
