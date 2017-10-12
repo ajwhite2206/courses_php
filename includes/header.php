@@ -28,15 +28,24 @@ echo '
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<<<<<<< HEAD
       <ul class="nav navbar-nav">
         <li><a href="courses.php">Courses<span class="sr-only">(current)</span></a></li>';
         if(!(isset($_SESSION['email'])) ){
         echo '<li><a href="register.php">Register<span class="sr-only">(current)</span></a></li>
 	<li><a href="recovery.php">Recover Account<span class="sr-only">(current)</span></a></li>';
 }
+=======
+      <ul class="nav navbar-nav">';
+>>>>>>> b74628375024597d89d03473f7596533c8e65591
         if( isset($_SESSION['email']) ){
-          echo '<li><a href="mycourses.php">My Courses<span class="sr-only">(current)</span></a></li>';
-        }
+					echo '<li><a href="courses.php">Courses<span class="sr-only">(current)</span></a></li>
+          <li><a href="mycourses.php">My Courses<span class="sr-only">(current)</span></a></li>';
+        } else {
+					echo '<li><a href="courses.php">Courses<span class="sr-only">(current)</span></a></li>
+          <li><a href="register.php">Register<span class="sr-only">(current)</span></a></li>
+					<li><a href="recovery.php">Recover Account<span class="sr-only">(current)</span></a></li>';
+				}
       echo '
       </ul>
       <ul class="nav navbar-nav navbar-right">';
