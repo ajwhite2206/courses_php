@@ -1,8 +1,6 @@
 <?php
   include("includes/header.php");
-  if (empty($_SESSION)){
-    header("Location: index.php");
-  }
+  
 ?>
 
 <html>
