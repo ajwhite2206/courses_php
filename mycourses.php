@@ -38,10 +38,8 @@
 						while($e = $eval->fetch(PDO::FETCH_OBJ)){
 							if ($e->CourseID == $r->courseID){
 								$match = True;
-								echo "finished";
 							} else {
 								$match = False;
-								echo "incomplete";
 							}
 						} 
 						

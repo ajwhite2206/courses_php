@@ -21,7 +21,7 @@ if($_SESSION['email'] = NULL){
 	$checkClass = $qCheck->fetch(PDO::FETCH_ASSOC);
 	//Check if already registered.
 	if((int)$checkClass['idCount'] > 0){
-		print("You are already regstered to this course");
+		print("You are already registered to this course");
 	} else{
 		$query = $conn->query("INSERT INTO registration (courseID, email) VALUES('$cid', '$userEmail')");
 		print("You are now registered to this course");
