@@ -1,6 +1,8 @@
 <?php
 include 'datalogin.php';
-session_start();
+if(empty($_SESSION)){
+	session_start();
+}
 echo '
 <head>
 	<link type="text/css" href="https://bootswatch.com/flatly/bootstrap.min.css" rel="stylesheet" media="screen" />

@@ -1,7 +1,13 @@
 <?php
   include("datalogin.php");
   include("includes/header.php");
+<<<<<<< HEAD
   //session_start();
+=======
+  if(empty($_SESSION)){
+    session_start();
+  }
+>>>>>>> 77c9a8648a8a955d04af126e86bfc20d5b45364c
 ?>
 <!DOCTYPE html>
 <html>
