@@ -1,7 +1,9 @@
 <?php
 include("datalogin.php");
 include("includes/header.php");
-session_start();
+if(empty($_SESSION)){
+	session_start();
+}
 session_regenerate_id(true);
 if( isset($_SESSION['email']) ){
 	header("Location: index.php");
