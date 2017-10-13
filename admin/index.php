@@ -33,7 +33,7 @@ endif;
 
 /* include("_header.php");  NOT OF USE TO USE CURRENTLY  */?>
     <div class="container">
-    <form method="POST" action="survey.php" role="form" class="form-hoizontal">
+    
     <fieldset>
 
 
@@ -42,7 +42,7 @@ endif;
 
         <h1>Add A New Course</h1>
 
-        <form method="post" action="?page=add-course">
+        <form method="POST" action="survey.php" role="form" class="form-hoizontal">
             <input type="hidden" name="add-course" value="1">
             <label for="instructor">
                 <span>What is the email address of the instructor?</span>
@@ -112,7 +112,4 @@ endif;
             <br>
             <input type="submit">
         </form>
-
-    
-  
     </div>
