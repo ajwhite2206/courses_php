@@ -15,10 +15,19 @@ if(!empty($_POST['date']) /*&& !empty($_POST['rating']) && !empty($_POST['recomm
 		$trueorfalse = 'No';
 	}
 
-	$date =  $_POST['date'];
-	$rating = $_POST['rating'];
-	$recommend = $_POST['recommend'];
-	$comment = $_POST['comment'];
+	$instructor = $_POST['instructor'];
+    $title = $_POST['title'];
+    $category = $_POST['category'];
+    $location = $_POST['location'];
+    $points = $_POST['points'];
+    $start_date = $_POST['start-date'];
+    $start_time = $_POST['start-time'];
+    $end_date = $_POST['end-date'];
+    $end_time = $_POST['end-time'];
+    $resources = $_POST['resources'];
+    $description = $_POST['description'];
+    $course_type_true = $_POST['course-type-true'];
+    $course_type_false = $_POST['course-type-false'];
 
 	// Enter the new user in the database
 	$query = $conn->query("INSERT INTO evaluation (CourseID, userID, submissionDate, Question1, Question2, Question3, Question4) VALUES ('111', '111', date(), '$date', '$rating', '$recommend', '$comment')");
