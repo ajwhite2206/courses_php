@@ -1,4 +1,5 @@
 <?php
+  include("datalogin.php");
   include("includes/header.php");
 ?>
 <!DOCTYPE html>
@@ -13,9 +14,9 @@
 
 			<br>
 			</body>
-	
+
 		<div id="footer">
-			
+
 		</div>
 	</div>
 

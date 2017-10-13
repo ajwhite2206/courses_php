@@ -1,5 +1,7 @@
 	<?php
+		include("datalogin.php");
 		include("includes/header.php");
+		session_start();
 		//loop to make sure form was filled out correctly
 		$code = $_SESSION['code'];
 		$email = $_SESSION['email'];
