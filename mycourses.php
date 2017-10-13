@@ -24,6 +24,7 @@
         </thead>
 
         <?php
+			$match = False;
             $email = $_SESSION['email'];
 			$query = $conn->query("SELECT r.courseID, c.subject, c.instructor, c.location, c.startDate, c.endDate, r.registerDate, r.courseComplete FROM registration r, tblCourses c WHERE r.email='$email' AND r.courseID=c.CourseID;");
 				
@@ -38,8 +39,6 @@
 						while($e = $eval->fetch(PDO::FETCH_OBJ)){
 							if ($e->CourseID == $r->courseID){
 								$match = True;
-							} else {
-								$match = False;
 							}
 						} 
 						
