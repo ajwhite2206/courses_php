@@ -30,7 +30,7 @@ if(!empty($_POST['date']) /*&& !empty($_POST['rating']) && !empty($_POST['recomm
     $course_type_false = $_POST['course-type-false'];
 
 	// Enter the new user in the database
-	$query = $conn->query("INSERT INTO evaluation (CourseID, userID, submissionDate, Question1, Question2, Question3, Question4) VALUES ('111', '111', date(), '$date', '$rating', '$recommend', '$comment')");
+	$query = $conn->query("INSERT INTO tblCourses (CourseID, points, subject, StartDate, startTime, endDate, endTime, instructor, resources, location, description) VALUES ('111', '$points', '$start_date', '$start_time', '$end_date', '$instructor', '$resources', '$location ', '$description')");
 /*
 	else:
 		$message = 'Sorry, there was an error with your submission';
@@ -51,7 +51,7 @@ endif;
 
         <h1>Add A New Course</h1>
 
-        <form method="POST" action="survey.php" role="form" class="form-hoizontal">
+        <form method="POST" action="index.php" role="form" class="form-hoizontal">
             <input type="hidden" name="add-course" value="1">
             <label for="instructor">
                 <span>What is the email address of the instructor?</span>
