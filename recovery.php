@@ -1,6 +1,8 @@
 
 <?php
+    include("datalogin.php");
   	include("includes/header.php");
+    session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,17 +15,17 @@
 				<button name="Submit" id="submit" class="btn primary btn-default" type="submit">Check Email</button>
 			</form>
 
-						
+
 			<a href="register.php" name="Sign Up" id="signup" class="btn btn-default" type="submit">Create new account</a>
-			</n>	
+			</n>
 			<a href="login.php" name="login" id="login" class="btn btn-default " type="submit">Existing Account</a>
 
 
 		</div> <!-- /container -->
 		<br>
 
-					
-	
+
+
 		<div id="footer">
 		</div>
 	</body>
