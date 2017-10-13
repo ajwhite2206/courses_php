@@ -38,78 +38,81 @@ endif;
 
 
     <legend>Add Course</legend>
-    <form class="form-horizontal">
-  <fieldset>
-    <legend>Legend</legend>
-    <div class="form-group">
-      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-      <div class="col-lg-10">
-        <input type="text" class="form-control" id="inputEmail" placeholder="Email">
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-      <div class="col-lg-10">
-        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-        <div class="checkbox">
-          <label>
-            <input type="checkbox"> Checkbox
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="textArea" class="col-lg-2 control-label">Textarea</label>
-      <div class="col-lg-10">
-        <textarea class="form-control" rows="3" id="textArea"></textarea>
-        <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="col-lg-2 control-label">Radios</label>
-      <div class="col-lg-10">
-        <div class="radio">
-          <label>
-            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-            Option one is this
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-            Option two can be something else
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="select" class="col-lg-2 control-label">Selects</label>
-      <div class="col-lg-10">
-        <select class="form-control" id="select">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-        <br>
-        <select multiple="" class="form-control">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="col-lg-10 col-lg-offset-2">
-        <button type="reset" class="btn btn-default">Cancel</button>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
-    </div>
-  </fieldset>
-</form>
+    <section class="c-content box spill-left clear u-min-height">
+
+        <h1>Add A New Course</h1>
+
+        <form method="post" action="?page=add-course">
+            <input type="hidden" name="add-course" value="1">
+            <label for="instructor">
+                <span>What is the email address of the instructor?</span>
+                <input type="email" name="instructor" id="instructor" placeholder="instructor@lcsc.edu" autofocus>
+            </label>
+            <br>
+            <label for="title">
+                <span>What is the title of the course?</span>
+                <input type="text" name="title" id="title" placeholder="Microsoft Excel Basics">
+            </label>
+            <br>
+            <label for="category">
+                <span>What is the category of this course?</span>
+                <input type="text" name="category" id="category" placeholder="Computer Technology">
+            </label>
+            <br>
+            <label for="location">
+                <span>Where is it located?</span>
+                <input type="text" name="location" id="location" placeholder="SGC 56">
+            </label>
+            <br>
+            <label for="points">
+                <span>How many points is it worth?</span>
+                <input type="number" name="points" id="points" placeholder="2">
+            </label>
+            <br>
+            <label for="start-date">
+                <span>What date does it begin?</span>
+                <input type="date" name="start-date" id="start-date">
+            </label>
+            <br>
+            <label for="start-time">
+                <span>What time of the day does it begin?</span>
+                <input type="time">
+            </label>
+            <br>
+            <label for="end-date">
+                <span>What date does it end?</span>
+                <input type="date" name="end-date" id="end-date">
+            </label>
+            <br>
+            <label for="end-time">
+                <span>What time of the day does it end?</span>
+                <input type="time" name="end-time" id="end-time">
+            </label>
+            <br>
+            <label for="resources">
+                <span>What other resources are available for this course?</span>
+                <textarea name="resources" id="resources"
+                          placeholder="Limitations, web links, or other special considerations"></textarea>
+            </label>
+            <br>
+            <label for="description">
+                <span>Give a detailed description of the course.</span>
+                <textarea name="description" id="description"></textarea>
+            </label>
+            <br>
+            <span>Is this an online course?</span>
+            <label for="course-type-true">
+                <input type="radio" name="course-type" id="course-type-true" value="online">
+                <span>Yes</span>
+            </label>
+            <label for="course-type-false">
+                <input type="radio" name="course-type" id="course-type-false" value="traditional">
+                <span>No</span>
+            </label>
+            <br>
+            <input type="submit">
+        </form>
+
     
   
     </div>
