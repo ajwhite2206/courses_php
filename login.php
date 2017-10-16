@@ -10,10 +10,28 @@ if(!empty($_POST['email']) && !empty($_POST['password'])):
 	$records->execute();
 	$results = $records->fetch(PDO::FETCH_ASSOC);
 	$message = '';
-		if($_POST['password']  == $results['password']) {
+	if($_POST['password']  == $results['password']) {
 		$_SESSION['email'] = $results['email'];
 		//header("Location: /");
 		echo $_SESSION['email'];
+		
+		// check for admin priv
+		$email = $_SESSION['email'];
+		$admin = $conn->prepare("SELECT * FROM tblAdmin where adminEmail = '$email'");
+		$admin->execute();
+		$issuper = $admin->fetch(PDO::FETCH_ASSOC);
+		if($_SESSION['email'] == $issuper['adminEmail']){
+			echo "and we are in";
+			$_SESSION['admin'] = true;
+			//doubling checking to see if they are super user
+			if($issuper['superAdmin']  == 'T'){
+				$_SESSION['superAdmin'] = true;
+			} else {
+				$_SESSION['superAdmin'] = false;
+			}
+		} else {
+			$_SESSION['admin'] = false;
+		}
 		header("Location: index.php");
 	} else {
 		$message = 'Sorry, those credentials do not match';
