@@ -12,11 +12,6 @@ $message = '';
 
 if(!empty($_POST['date']) /*&& !empty($_POST['rating']) && !empty($_POST['recommend'])*/):
 	// setting variables for the query
-	if($_POST['recommend'] == -1){
-		$trueorfalse = 'Yes';
-	} else {
-		$trueorfalse = 'No';
-	}
 
 	$instructor = $_POST['instructor'];
     $title = $_POST['title'];

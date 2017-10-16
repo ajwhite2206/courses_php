@@ -10,6 +10,7 @@ if(!empty($_POST['email']) && !empty($_POST['password'])):
 	$records->execute();
 	$results = $records->fetch(PDO::FETCH_ASSOC);
 	$message = '';
+	$_SESSION['superAdmin'] = false;
 	if($_POST['password']  == $results['password']) {
 		$_SESSION['email'] = $results['email'];
 		//header("Location: /");
@@ -26,9 +27,9 @@ if(!empty($_POST['email']) && !empty($_POST['password'])):
 			//doubling checking to see if they are super user
 			if($issuper['superAdmin']  == 'T'){
 				$_SESSION['superAdmin'] = true;
-			} else {
+ 			} else {
 				$_SESSION['superAdmin'] = false;
-			}
+			} 
 		} else {
 			$_SESSION['admin'] = false;
 		}
