@@ -13,14 +13,13 @@ if(!($_SESSION['email'])){
 
 	<?php
 	$cid = intval($_GET['CID']);
-	$userEmail = $_SESSION['email'];
-	$qCheck = $conn->query("DELETE FROM tblCourses WHERE courseID = $cid");
-
+	$qCheck = $conn->query("SELECT * tblCourses WHERE courseID = $cid");
+	$r = $qCheck->fetch(PDO::FETCH_OBJ);
 	//Check if already registered.
-	if($qCheck){
-		print("Course has been removed.");
+	if($r){
+		print("This is right");
 	} else{
-		print("There has been an error with your request.");
+		print("Something is amiss");
 	}
 	
 	?>

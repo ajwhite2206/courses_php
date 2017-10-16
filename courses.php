@@ -31,7 +31,7 @@
 				<?php
 						$query = $conn->query('SELECT * FROM tblCourses WHERE startDate > #1/1/2017#');
 						while($r = $query->fetch(PDO::FETCH_OBJ)) {
-              $stDate = date_create($r->startDate);
+						$stDate = date_create($r->startDate);
 
 					echo '<tbody>
 							<tr>

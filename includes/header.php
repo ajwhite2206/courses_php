@@ -38,7 +38,7 @@ echo '
         } elseif ( isset($_SESSION['email']) && $_SESSION['admin'] == true){
 			echo '<li><a href="courses.php">Courses<span class="sr-only">(current)</span></a></li>
 			<li><a href="mycourses.php">My Courses<span class="sr-only">(current)</span></a></li>
-			<li><a href="mycourses.php">Create Course<span class="sr-only">(current)</span></a></li>'; //this needs to go somewhere
+			<li><a href="createCourse.php">Create Course<span class="sr-only">(current)</span></a></li>'; //this needs to go somewhere
 		} elseif ( isset($_SESSION['email'])){
 			echo '<li><a href="courses.php">Courses<span class="sr-only">(current)</span></a></li>
 			<li><a href="mycourses.php">My Courses<span class="sr-only">(current)</span></a></li>';
