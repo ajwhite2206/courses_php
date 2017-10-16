@@ -16,7 +16,7 @@
             <th>Start Date</th>
             <th>End Date</th>
             <th>Registration Date</th>
-            <th>Completed</th>
+            <!-- <th>Completed</th> -->
             <th>Evaluation</th>
           </tr>
         </thead>
@@ -29,8 +29,8 @@
 					$stDate = date_create($r->startDate);
 					$edDate = date_create($r->endDate);
 
-					if($r->courseComplete == 0){ $courseCmp = 'Incomplete'; } elseif ($r->courseComplete == 1) { $courseCmp = 'Complete'; }
-					
+					//if($r->courseComplete == 0){ $courseCmp = 'Incomplete'; } elseif ($r->courseComplete == 1) { $courseCmp = 'Complete'; }
+					// NINA SAID IT WAS UNNECESSARY HERE IS THE CODE THAT WENT BELOW IN THE TABLE <td>'; echo $courseCmp, '</td>
 					//checks to see if current courseid and email have completed course evaluation
 					$eval = $conn->query("SELECT CourseID FROM evaluation WHERE Email='$email'");
 					$match = False; //default
@@ -49,7 +49,6 @@
 								<td>'; echo date_format($stDate, "m-d-Y"), '</td>
 								<td>'; echo date_format($edDate, "m-d-Y"), '</td>
 								<td>'; echo $r->registerDate, '</td>
-								<td>'; echo $courseCmp, '</td>
 								<td>';  
 									// prints hyper link if survey has not been completed
 									if($match){
