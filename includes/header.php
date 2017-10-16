@@ -31,11 +31,15 @@ echo '
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">';
-        if( isset($_SESSION['email'])  && $_SESSION['admin'] == true){
+        if( isset($_SESSION['email'])  && $_SESSION['superAdmin'] == true){
 			echo '<li><a href="courses.php">Courses<span class="sr-only">(current)</span></a></li>
 			<li><a href="mycourses.php">My Courses<span class="sr-only">(current)</span></a></li>
-			<li><a href="mycourses.php">Admin Control<span class="sr-only">(current)</span></a></li>';
-        } elseif ( isset($_SESSION['email'])){
+			<li><a href="superAdminCtl.php">Admin Control<span class="sr-only">(current)</span></a></li>'; 
+        } elseif ( isset($_SESSION['email']) && $_SESSION['admin'] == true){
+			echo '<li><a href="courses.php">Courses<span class="sr-only">(current)</span></a></li>
+			<li><a href="mycourses.php">My Courses<span class="sr-only">(current)</span></a></li>
+			<li><a href="mycourses.php">Create Course<span class="sr-only">(current)</span></a></li>'; //this needs to go somewhere
+		} elseif ( isset($_SESSION['email'])){
 			echo '<li><a href="courses.php">Courses<span class="sr-only">(current)</span></a></li>
 			<li><a href="mycourses.php">My Courses<span class="sr-only">(current)</span></a></li>';
 		} else {

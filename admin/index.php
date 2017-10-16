@@ -1,9 +1,12 @@
 <?php
+  include("../datalogin.php"); 	
   include("../includes/header.php");
 
-if( isset($_SESSION['email']) ){
-	//header("Location: index.php");
-}
+  //session_start();
+
+  if(empty($_SESSION)){		   
+     session_start();		
+   } 
 
 $message = '';
 
