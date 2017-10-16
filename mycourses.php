@@ -1,7 +1,7 @@
 <?php
   include("includes/header.php");
-  if (empty($_SESSION)){		   
-     header("Location: index.php");		
+  if(empty($_SESSION)){		   
+     header("Location: index.php");
    }
 ?>
 
@@ -26,7 +26,7 @@
         <?php
             $email = $_SESSION['email'];
 			$query = $conn->query("SELECT r.courseID, c.subject, c.instructor, c.location, c.startDate, c.endDate, r.registerDate, r.courseComplete FROM registration r, tblCourses c WHERE r.email='$email' AND r.courseID=c.CourseID;");
-				
+
 				while($r = $query->fetch(PDO::FETCH_OBJ)) {
 					$stDate = date_create($r->startDate);
 					$edDate = date_create($r->endDate);
@@ -39,9 +39,9 @@
 						while($e = $eval->fetch(PDO::FETCH_OBJ)){
 							if ($e->CourseID == $r->courseID){
 								$match = True;
-							} 
-						} 
-						
+							}
+						}
+
 						echo '<tbody>
 							<tr>
 								<td>'; echo $r->courseID, '</td>
@@ -51,17 +51,17 @@
 								<td>'; echo date_format($stDate, "m-d-Y"), '</td>
 								<td>'; echo date_format($edDate, "m-d-Y"), '</td>
 								<td>'; echo $r->registerDate, '</td>
-								<td>';  
+								<td>';
 									// prints hyper link if survey has not been completed
 									if($match){
-											echo "Evaluation Completed"; 
-									    } else { 
+											echo "Evaluation Completed";
+									    } else {
 											echo "<a href='survey.php?CID=$r->courseID'>Evaluation Form</a>";
-										} '</td>; 
+										} '</td>;
 							</tr></tbody>';
 
 						}
-					
+
 					?>
 
       </table>

@@ -1,12 +1,6 @@
 <?php
-  include("datalogin.php"); 	
+  include("datalogin.php");
   include("includes/header.php");
-
-  //session_start();
-
-  if(empty($_SESSION)){		   
-     session_start();		
-   } 
 
 $message = '';
 
@@ -26,7 +20,7 @@ if(!empty($_POST['date']) /*&& !empty($_POST['rating']) && !empty($_POST['recomm
     $description = $_POST['description'];
     $course_type_true = $_POST['course-type-true'];
     $course_type_false = $_POST['course-type-false'];
-    
+
 
 	// Enter the new user in the database
 	$query = $conn->query("INSERT INTO tblCourses (points, subject, StartDate, startTime, endDate, endTime, instructor, resources, location, description) VALUES ('$points', '$start_date', '$start_time', '$end_date', '$instructor', '$resources', '$location ', '$description')");
@@ -36,7 +30,7 @@ endif;
 
 /* include("_header.php");  NOT OF USE TO USE CURRENTLY  */?>
     <div class="container">
-    
+
     <fieldset>
 
 

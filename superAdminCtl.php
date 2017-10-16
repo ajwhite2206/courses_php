@@ -1,13 +1,6 @@
 <?php
-include("datalogin.php"); 	
+include("datalogin.php");
 include("includes/header.php");
-
-
-if(empty($_SESSION)){		   
-	session_start();		
-} 
-
-
 ?>
 
 
@@ -36,9 +29,9 @@ if(empty($_SESSION)){
 		document.getElementById(cityName).style.display = "block";
 		evt.currentTarget.className += " active";
 		}
-		
+
 		</script>
-		
+
 		<!-- creating our tabs -->
 		<div class="tab">
 		  <button class="tablinks" onclick="openCity(event, 'addCourse')" id="defaultOpen">Add Course</button>
@@ -72,7 +65,7 @@ if(empty($_SESSION)){
 					$description = $_POST['description'];
 					$course_type_true = $_POST['course-type-true'];
 					$course_type_false = $_POST['course-type-false'];
-					
+
 
 					// Enter the new user in the database
 					$query = $conn->query("INSERT INTO tblCourses (CourseID, points, subject, StartDate, startTime, endDate, endTime, instructor, resources, location, description) VALUES ('111', '$points', '$start_date', '$start_time', '$end_date', '$instructor', '$resources', '$location ', '$description')");
@@ -151,7 +144,7 @@ if(empty($_SESSION)){
 					</form>
 			  </p>
 		</div>
-		
+
 		<!-- drop course form -->
 		<div id="dropCourse" class="tabcontent">
 		  <h3>Drop Course</h3>
@@ -195,15 +188,15 @@ if(empty($_SESSION)){
 			</table>
 		  </p>
 		</div>
-		
+
 				<!-- User Priveleges Form -->
 		<div id="userPriv" class="tabcontent">
 		  <h3>User Priveleges</h3>
 		  <p>
 
-		  </p> 
+		  </p>
 		</div>
-		
+
 		<script>
 		// Get the element with id="defaultOpen" and click on it
 		document.getElementById("defaultOpen").click();

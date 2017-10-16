@@ -4,7 +4,6 @@
 <html>
 <body>
 	<div class="container">
-		
 
 		<table class="table table-striped table-hover ">
   			<thead>
@@ -43,7 +42,7 @@
 			<br /><br />
 		</div>
 		<div id="footer">
-			
+
 	</div>
 </body>
 

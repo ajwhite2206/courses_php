@@ -1,6 +1,6 @@
 <?php
 include 'datalogin.php';
-if(empty($_SESSION)){
+if(!isset($_SESSION)){
 	session_start();
 }
 echo '
@@ -34,7 +34,7 @@ echo '
         if( isset($_SESSION['email'])  && $_SESSION['superAdmin'] == true){
 			echo '<li><a href="courses.php">Courses<span class="sr-only">(current)</span></a></li>
 			<li><a href="mycourses.php">My Courses<span class="sr-only">(current)</span></a></li>
-			<li><a href="superAdminCtl.php">Admin Control<span class="sr-only">(current)</span></a></li>'; 
+			<li><a href="superAdminCtl.php">Admin Control<span class="sr-only">(current)</span></a></li>';
         } elseif ( isset($_SESSION['email']) && $_SESSION['admin'] == true){
 			echo '<li><a href="courses.php">Courses<span class="sr-only">(current)</span></a></li>
 			<li><a href="mycourses.php">My Courses<span class="sr-only">(current)</span></a></li>

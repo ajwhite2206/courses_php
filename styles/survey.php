@@ -1,10 +1,6 @@
 <?php
   include("includes/header.php");
 
-if( isset($_SESSION['email']) ){
-	//header("Location: index.php");
-}
-
 $message = '';
 
 if(!empty($_POST['date']) /*&& !empty($_POST['rating']) && !empty($_POST['recommend'])*/):
