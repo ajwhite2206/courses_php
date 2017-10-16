@@ -1,7 +1,9 @@
 <?php
-
+	include("datalogin.php");
   	include("includes/header.php");
-    
+    if(empty($_SESSION)){		     
+       session_start();		
+     }
 ?>
 <!DOCTYPE html>
 <html>
