@@ -40,15 +40,14 @@ if(!($_SESSION['email'])){
 				} else {
 					$query = $conn->query("SELECT * FROM tblCourses WHERE CourseID = $CID");
 					while($r = $query->fetch(PDO::FETCH_OBJ)) {
-						
-					
+
 ?>
 					<legend>Edit Course</legend>
 					<form method="POST" action="courseUpdate.php" role="form" class="form-hoizontal">
 						<input type="hidden" name="CID" id="CID" value="<?php echo $_REQUEST['CID'];?>" />
 						<input type="hidden" name="submit" id="submit" value=1 />
 						<label for="instructor">
-							<span>Instructor Email</span>
+							<span>Instructor Email:</span>
 							<input type="email" name="instructor" id="instructor" required="required" value="<?php echo $r->instructor; ?>" autofocus>
 						</label>
 						<br>
@@ -58,51 +57,75 @@ if(!($_SESSION['email'])){
 						</label>
 						<br>
 						<label for="category">
-							<span>Course Category</span>
+							<span>Course Category:</span>
 							<input type="text" name="category" id="category" required="required" value="<?php echo $r->category; ?>">
 						</label>
 						<br>
 						<label for="location">
-							<span>Location</span>
+							<span>Location:</span>
 							<input type="text" name="location" id="location" required="required" value="<?php echo $r->location; ?>">
 						</label>
 						<br>
 						<label for="points">
-							<span>Points</span>
+							<span>Points:</span>
 							<input type="number" name="points" id="points" required="required" value="<?php echo $r->points; ?>">
 						</label>
 						<br>
+						<?php //converts to proper date format
+							$hold = date_create($r->startDate);
+							$result = $hold->format('m-d-Y');
+							$result = (string)$result;
+						?>
 						<label for="start-date">
-							<span>Start Date</span>
-							<input type="date" name="start-date" id="start-date" required="required" value="<?php echo $r->startDate; ?>">
+							<span>Start Date:</span>
+							<input type="text" name="start-date" id="start-date" required="required" value="<?php echo $result; ?>">
 						</label>
 						<br>
+						<?php //converts to proper date format
+							$hold = date_create($r->endDate);
+							$result = $hold->format('m-d-Y');
+							$result = (string)$result;
+						?>
 						<label for="end-date">
-							<span>End Date</span>
-							<input type="date" name="end-date" id="end-date" value="<?php echo $r->endDate; ?>">
+							<span>End Date:</span>
+							<input type="text" name="end-date" id="end-date" value="<?php echo $result; ?>">
 						</label>
 						<br>
+						<?php //converts to proper date format
+							if($r->startTime!=Null){
+								$stTime = date_create($r->startTime);
+							} else {
+								$stTime = date_create("00:00");
+							}
+						?>
 						<label for="start-time">
-							<span>Start Time</span>
-							<input type="time" name="start-time" id="start-time" value="<?php echo $r->startTime; ?>">
+							<span>Start Time:</span>
+							<input type="text" name="start-time"id="start-time" value="<?php echo date_format($stTime, "h:i a") ?>">
 						</label>
 						<br>
+						<?php //converts to proper date format
+							if($r->endTime!=Null){
+								$endTime = date_create($r->endTime);
+							} else {
+								$endTime = date_create("00:00");
+							}
+						?>
 						<label for="end-time">
-							<span>End Time</span>
-							<input type="time" name="end-time" id="end-time" value="<?php echo $r->endTime; ?>">
+							<span>End Time:</span>
+							<input type="text" name="end-time" id="end-time" value="<?php echo date_format($endTime, "h:i a") ?>">
 						</label>
 						<br>
 						<label for="resources">
-							<span>Course Resources</span>
-							<textarea name="resources" id="resources" ><?php echo $r->description; ?></textarea>
+							<span>Course Resources:</span><br>
+							<textarea name="resources" id="resources" ><?php echo $r->resources; ?></textarea>
 						</label>
 						<br>
 						<label for="description">
-							<span>Course Description</span>
+						<span>Course Description:</span><br>
 							<textarea name="description" id="description" ><?php echo $r->description; ?></textarea>
 						</label>
 						<br>
-						<span>Online</span>
+						<span>Online:</span>
 						<label for="course-type-true">
 							<input type="radio" name="course-type" id="course-type-true" value="online">
 							<span>Yes</span>

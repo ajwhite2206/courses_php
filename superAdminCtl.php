@@ -167,23 +167,28 @@ include("includes/header.php");
 				<?php
 					$query = $conn->query('SELECT * FROM tblCourses WHERE startDate > #1/1/2017#');
 					while($r = $query->fetch(PDO::FETCH_OBJ)) {
-					$stDate = date_create($r->startDate);
+						if($r->startTime!=Null){
+							$stTime = date_create($r->startTime);
+						} else {
+							$stTime = date_create("00:00");
+						}
+						
+						$stDate = date_create($r->startDate);
+						echo '<tbody>
+							<tr>
+								<td>'; echo $r->CourseID, '</td>
+								<td>'; echo "<a href='courses_description.php?CID=$r->CourseID'>$r->subject</a>", '</td>
+								<td>'; echo date_format($stDate, "m-d-Y"), '</td>
+								<td>'; echo date_format($stTime, "h:i a"), '</td>
+								<td>'; echo $r->category, '</td>
+								<td>'; echo $r->instructor, '</td>
+								<td>'; echo $r->location, '</td>
+								<td>'; echo "<a href='courseDrop.php?CID=$r->CourseID'><img src='images/trash.png' alt='trash' height='24' width='24'></a>", '</td>
+								<td>'; echo "<a href='courseUpdate.php?CID=$r->CourseID'><img src='images/write.png' alt='trash' height='24' width='24'></a>", '</td>
+							</tr>
+							</tbody>';
 
-					echo '<tbody>
-						<tr>
-							<td>'; echo $r->CourseID, '</td>
-							<td>'; echo "<a href='courses_description.php?CID=$r->CourseID'>$r->subject</a>", '</td>
-							<td>'; echo date_format($stDate, "m-d-Y"), '</td>
-							<td>'; echo $r->startTime, '</td>
-							<td>'; echo $r->category, '</td>
-							<td>'; echo $r->instructor, '</td>
-							<td>'; echo $r->location, '</td>
-							<td>'; echo "<a href='courseDrop.php?CID=$r->CourseID'><img src='images/trash.png' alt='trash' height='24' width='24'></a>", '</td>
-							<td>'; echo "<a href='courseUpdate.php?CID=$r->CourseID'><img src='images/write.png' alt='trash' height='24' width='24'></a>", '</td>
-						</tr>
-						</tbody>';
-
-					}
+						}
 				?>
 			</table>
 		  </p>
