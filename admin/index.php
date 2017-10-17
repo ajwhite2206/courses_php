@@ -2,15 +2,6 @@
   include("../datalogin.php");
   include("../includes/header.php");
 
-$message = '';
-
-if(!empty($_POST['date']) /*&& !empty($_POST['rating']) && !empty($_POST['recommend'])*/):
-	// setting variables for the query
-	if($_POST['recommend'] == -1){
-		$trueorfalse = 'Yes';
-	} else {
-		$trueorfalse = 'No';
-	}
 
 	$instructor = $_POST['instructor'];
     $title = $_POST['title'];
@@ -29,16 +20,7 @@ if(!empty($_POST['date']) /*&& !empty($_POST['rating']) && !empty($_POST['recomm
 
 	// Enter the new user in the database
 	$query = $conn->query("INSERT INTO tblCourses (CourseID, points, subject, StartDate, startTime, endDate, endTime, instructor, resources, location, description) VALUES ('111', '$points', '$start_date', '$start_time', '$end_date', '$instructor', '$resources', '$location ', '$description')");
-/*
-	else:
-		$message = 'Sorry, there was an error with your submission';
-	endif;
-
-	echo $message; */
-
-endif;
-
-/* include("_header.php");  NOT OF USE TO USE CURRENTLY  */?>
+?>
     <div class="container">
 
     <fieldset>
