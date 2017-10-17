@@ -159,7 +159,7 @@ include("includes/header.php");
 						<th>Category</th>
 						<th>Instructor</th>
 						<th>Location</th>
-						<th>Remove</th>
+						<th>Delete</th>
 						<th>Edit</th>
 					</tr>
 				</thead>
@@ -178,8 +178,8 @@ include("includes/header.php");
 							<td>'; echo $r->category, '</td>
 							<td>'; echo $r->instructor, '</td>
 							<td>'; echo $r->location, '</td>
-							<td>'; echo "<a href='courseDrop.php?CID=$r->CourseID'>Drop</a>", '</td>
-							<td>'; echo "<a href='courseUpdate.php?CID=$r->CourseID'>Update</a>", '</td>
+							<td>'; echo "<a href='courseDrop.php?CID=$r->CourseID'><img src='images/trash.png' alt='trash' height='24' width='24'></a>", '</td>
+							<td>'; echo "<a href='courseUpdate.php?CID=$r->CourseID'><img src='images/write.png' alt='trash' height='24' width='24'></a>", '</td>
 						</tr>
 						</tbody>';
 
