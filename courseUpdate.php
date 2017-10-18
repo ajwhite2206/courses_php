@@ -29,12 +29,23 @@ if(!($_SESSION['email'])){
 					$end_time = $_POST['end-time'];
 					$resources = $_POST['resources'];
 					$description = $_POST['description'];
-					//$course_type = $_POST['course-type-true'];
-					//implement radios
 					$CID = $_POST['CID'];
 
 					// Enter the new user in the database
-					$query = $conn->query("UPDATE tblCourses SET subject='$title' WHERE CourseID=$CID");
+					$query = $conn->query(
+					"UPDATE tblCourses 
+					SET subject='$title',
+						instructor='$instructor',
+						category='$category',
+						location='$location',
+						points='$points',
+						startDate=#$start_date#,
+						endDate=#$end_date#,
+						startTime='$start_time',
+						endTime='$end_time',
+						resources='$resources',
+						description='$description'
+					WHERE CourseID=$CID");
 					//place an if to make sure it runs
 					echo "Your changes are complete.";
 				} else {
@@ -42,13 +53,13 @@ if(!($_SESSION['email'])){
 					while($r = $query->fetch(PDO::FETCH_OBJ)) {
 
 ?>
-					<legend>Edit Course</legend>
+					<legend>Edit Course: <?php echo $CID; ?></legend>
 					<form method="POST" action="courseUpdate.php" role="form" class="form-hoizontal">
 						<input type="hidden" name="CID" id="CID" value="<?php echo $_REQUEST['CID'];?>" />
 						<input type="hidden" name="submit" id="submit" value=1 />
 						<label for="instructor">
 							<span>Instructor Email:</span>
-							<input type="email" name="instructor" id="instructor" required="required" value="<?php echo $r->instructor; ?>" autofocus>
+							<input type="text" name="instructor" id="instructor" required="required" value="<?php echo $r->instructor; ?>" autofocus>
 						</label>
 						<br>
 						<label for="title">
@@ -78,7 +89,7 @@ if(!($_SESSION['email'])){
 						?>
 						<label for="start-date">
 							<span>Start Date:</span>
-							<input type="text" name="start-date" id="start-date" required="required" value="<?php echo $result; ?>">
+							<input type="text" name="start-date" id="start-date" required="required" pattern="\d{2}-?\d{2}-?\d{4}" placeholder="11-11-2017" value="<?php echo $result; ?>">
 						</label>
 						<br>
 						<?php //converts to proper date format
@@ -88,7 +99,7 @@ if(!($_SESSION['email'])){
 						?>
 						<label for="end-date">
 							<span>End Date:</span>
-							<input type="text" name="end-date" id="end-date" value="<?php echo $result; ?>">
+							<input type="text" name="end-date" id="end-date" pattern="\d{2}-?\d{2}-?\d{4}" placeholder="11-11-2017" value="<?php echo $result; ?>">
 						</label>
 						<br>
 						<?php //converts to proper date format
@@ -100,7 +111,7 @@ if(!($_SESSION['email'])){
 						?>
 						<label for="start-time">
 							<span>Start Time:</span>
-							<input type="text" name="start-time"id="start-time" value="<?php echo date_format($stTime, "h:i a") ?>">
+							<input type="text" name="start-time"id="start-time" pattern="\d{2}+:?\d{2}+[a-z]" placeholder="07:00am" value="<?php echo date_format($stTime, "h:ia") ?>">
 						</label>
 						<br>
 						<?php //converts to proper date format
@@ -112,7 +123,7 @@ if(!($_SESSION['email'])){
 						?>
 						<label for="end-time">
 							<span>End Time:</span>
-							<input type="text" name="end-time" id="end-time" value="<?php echo date_format($endTime, "h:i a") ?>">
+							<input type="text" name="end-time" id="end-time" pattern="\d{2}+:?\d{2}+[a-z]" placeholder="07:00am" value="<?php echo date_format($endTime, "h:ia") ?>">
 						</label>
 						<br>
 						<label for="resources">
@@ -123,16 +134,6 @@ if(!($_SESSION['email'])){
 						<label for="description">
 						<span>Course Description:</span><br>
 							<textarea name="description" id="description" ><?php echo $r->description; ?></textarea>
-						</label>
-						<br>
-						<span>Online:</span>
-						<label for="course-type-true">
-							<input type="radio" name="course-type" id="course-type-true" value="online">
-							<span>Yes</span>
-						</label>
-						<label for="course-type-false">
-							<input type="radio" name="course-type" id="course-type-false" value="traditional">
-							<span>No</span>
 						</label>
 						<br>
 						<input type="submit">
