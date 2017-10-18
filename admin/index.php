@@ -2,7 +2,7 @@
     include("../includes/header.php");
      if( isset($_POST['submit']) ) {
     // Enter the course
-    $stmt = $conn->prepare("INSERT INTO tblCourses (points, subject, StartDate, startTime, endDate, endTime, instructor, resources, location, description) VALUES ('points', 'title', 'start_date', 'start_time', 'end_date', 'instructor', 'resources', 'location ', 'description')");
+    $stmt = $conn->prepare("INSERT INTO tblCourses (CourseID, points, subject, StartDate, startTime, endDate, endTime, instructor, resources, location, description) VALUES ('1596', :points, :title, :start_date, :start_time, :end_date, :instructor, :resources, :location, :description)");
 
     $stmt->bindParam(':points', $_POST['points']);
     $stmt->bindParam(':subject', $_POST['title']);
