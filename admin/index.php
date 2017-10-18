@@ -86,16 +86,6 @@
                 <textarea name="description" id="description"></textarea>
             </label>
             <br>
-            <span>Is this an online course?</span>
-            <label for="course-type-true">
-                <input type="radio" name="course-type" id="course-type-true" value="online">
-                <span>Yes</span>
-            </label>
-            <label for="course-type-false">
-                <input type="radio" name="course-type" id="course-type-false" value="traditional">
-                <span>No</span>
-            </label>
-            <br>
             <input type="submit">
         </form>
     </div>
