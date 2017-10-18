@@ -1,25 +1,22 @@
 <?php
-  include("../datalogin.php");
-  include("../includes/header.php");
+    include("../includes/header.php");
+     if( isset($_POST['submit']) ) {
+    // Enter the course
+    $stmt = $conn->prepare("INSERT INTO tblCourses (points, subject, StartDate, startTime, endDate, endTime, instructor, resources, location, description) VALUES ('points', 'title', 'start_date', 'start_time', 'end_date', 'instructor', 'resources', 'location ', 'description')");
 
+    $stmt->bindParam(':points', $_POST['points']);
+    $stmt->bindParam(':subject', $_POST['title']);
+    $stmt->bindParam(':StartDate', $_POST['start-date']);
+    $stmt->bindParam(':startTime', $_POST['start-time']);
+    $stmt->bindParam(':endDate', $_POST['end-date']);
+    $stmt->bindParam(':endTime', $_POST['end-time']);
+    $stmt->bindParam(':resources', $_POST['resources']);
+    $stmt->bindParam(':description', $_POST['description']);
 
-	$instructor = $_POST['instructor'];
-    $title = $_POST['title'];
-    $category = $_POST['category'];
-    $location = $_POST['location'];
-    $points = $_POST['points'];
-    $start_date = $_POST['start-date'];
-    $start_time = $_POST['start-time'];
-    $end_date = $_POST['end-date'];
-    $end_time = $_POST['end-time'];
-    $resources = $_POST['resources'];
-    $description = $_POST['description'];
-    $course_type_true = $_POST['course-type-true'];
-    $course_type_false = $_POST['course-type-false'];
+    $stmt->execute();
 
-
-	// Enter the new user in the database
-	$query = $conn->query("INSERT INTO tblCourses (CourseID, points, subject, StartDate, startTime, endDate, endTime, instructor, resources, location, description) VALUES ('111', '$points', '$start_date', '$start_time', '$end_date', '$instructor', '$resources', '$location ', '$description')");
+}
+	
 ?>
     <div class="container">
 
@@ -31,7 +28,7 @@
 
         <h1>Add A New Course</h1>
 
-        <form method="POST" action="index.php" role="form" class="form-hoizontal">
+        <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>" role="form" class="form-hoizontal">
             <input type="hidden" name="add-course" value="1">
             <label for="instructor">
                 <span>What is the email address of the instructor?</span>
