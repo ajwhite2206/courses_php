@@ -1,5 +1,5 @@
 <?php
-include("datalogin.php");
+//include("datalogin.php"); we dont need this. datalogin included in header.php already
 include("includes/header.php");
 
 session_regenerate_id(true);

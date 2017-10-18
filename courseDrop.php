@@ -3,7 +3,6 @@
 
 <?php 
 include("includes/header.php"); 
-include 'datalogin.php';
 if(!($_SESSION['email'])){
 		header("Location: login.php");
 	} 

@@ -1,5 +1,5 @@
 <?php
-	include("datalogin.php");
+	//include("datalogin.php"); header.php is enough
   include("includes/header.php");
 ?>
 <!DOCTYPE html>

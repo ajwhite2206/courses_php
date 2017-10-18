@@ -3,7 +3,6 @@
 	require('PHPMailer/src/Exception.php');
 	require('PHPMailer/src/SMTP.php');
 	include("includes/header.php");
-	include("datalogin.php");
 	
 	//Variable carried over from form in recovery
 	$email = $_POST['myemail'];
