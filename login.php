@@ -15,7 +15,7 @@ if(!empty($_POST['email']) && !empty($_POST['password'])):
 		$_SESSION['email'] = $results['email'];
 		//header("Location: /");
 		echo $_SESSION['email'];
-		
+		// WILL THE SECTION YOU NEED TO LOOK AT IS RIGHT HERE
 		// check for admin priv
 		$email = $_SESSION['email'];
 		$admin = $conn->prepare("SELECT * FROM tblAdmin where adminEmail = '$email'");
@@ -33,6 +33,8 @@ if(!empty($_POST['email']) && !empty($_POST['password'])):
 		} else {
 			$_SESSION['admin'] = false;
 		}
+		
+		// WILL THE SECTION YOU NEED ENDS HERE
 		header("Location: index.php");
 	} else {
 		$message = 'Sorry, those credentials do not match';
