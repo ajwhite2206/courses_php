@@ -6,7 +6,7 @@
 
     $stmt->bindParam(':points', $_POST['points']);
     $stmt->bindParam(':subject', $_POST['title']);
-    $stmt->bindParam(':StartDate', $_POST['start-date']);
+    $stmt->bindParam(':startDate', $_POST['start-date']);
     $stmt->bindParam(':startTime', $_POST['start-time']);
     $stmt->bindParam(':endDate', $_POST['end-date']);
     $stmt->bindParam(':endTime', $_POST['end-time']);
