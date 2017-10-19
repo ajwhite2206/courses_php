@@ -18,14 +18,14 @@ if(!empty($_POST['email']) && !empty($_POST['password'])):
 		// WILL THE SECTION YOU NEED TO LOOK AT IS RIGHT HERE
 		// check for admin priv
 		$email = $_SESSION['email'];
-		$admin = $conn->prepare("SELECT * FROM tblAdmin where adminEmail = '$email'");
+		$admin = $conn->prepare("SELECT * FROM tblStudents WHERE email = '$email'");
 		$admin->execute();
 		$issuper = $admin->fetch(PDO::FETCH_ASSOC);
-		if($_SESSION['email'] == $issuper['adminEmail']){
+		if($_SESSION['email'] == $issuper['email']){
 			echo "and we are in";
 			$_SESSION['admin'] = true;
 			//doubling checking to see if they are super user
-			if($issuper['superAdmin']  == 'T'){
+			if($issuper['superadmin']  == 'Y'){
 				$_SESSION['superAdmin'] = true;
  			} else {
 				$_SESSION['superAdmin'] = false;
