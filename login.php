@@ -21,7 +21,7 @@ if(!empty($_POST['email']) && !empty($_POST['password'])):
 		$admin = $conn->prepare("SELECT * FROM tblStudents WHERE email = '$email'");
 		$admin->execute();
 		$issuper = $admin->fetch(PDO::FETCH_ASSOC);
-		if($_SESSION['email'] == $issuper['email']){
+		if($issuper['admin'] == 'Y'){
 			echo "and we are in";
 			$_SESSION['admin'] = true;
 			//doubling checking to see if they are super user
