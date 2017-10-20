@@ -105,22 +105,22 @@ include("includes/header.php");
 						<br>
 						<label for="start-date">
 							<span>Start Date:</span>
-							<input type="text" name="start-date" id="start-date" required="required" pattern="\d{2}-?\d{2}-?\d{4}" placeholder="11-11-2017">
+							<input type="date" name="start-date" id="start-date" required="required" pattern="\d{2}-?\d{2}-?\d{4}" placeholder="11-11-2017">
 						</label>
 						<br>
 						<label for="end-date">
 							<span>End Date:</span>
-							<input type="text" name="end-date" id="end-date" pattern="\d{2}-?\d{2}-?\d{4}" placeholder="11-11-2017">
+							<input type="date" name="end-date" id="end-date" pattern="\d{2}-?\d{2}-?\d{4}" placeholder="11-11-2017">
 						</label>
 						<br>
 						<label for="start-time">
 							<span>Start Time:</span>
-							<input type="text" name="start-time"id="start-time" pattern="\d{2}+:?\d{2}+[a-z]" placeholder="07:00am" >
+							<input type="time" name="start-time"id="start-time" pattern="\d{2}+:?\d{2}+[a-z]" placeholder="07:00am" >
 						</label>
 						<br>
 						<label for="end-time">
 							<span>End Time:</span>
-							<input type="text" name="end-time" id="end-time" pattern="\d{2}+:?\d{2}+[a-z]" placeholder="07:00am">
+							<input type="time" name="end-time" id="end-time" pattern="\d{2}+:?\d{2}+[a-z]" placeholder="07:00am">
 						</label>
 						<br>
 						<label for="resources">
