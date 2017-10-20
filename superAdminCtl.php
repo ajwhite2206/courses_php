@@ -62,9 +62,9 @@ include("includes/header.php");
 					// Enter the new user in the database
 					$query = $conn->query(
 						"INSERT INTO tblCourses
-							(points, subject, startDate, startTime, endDate, endTime, instructor, resources, location, description)
+							(points, subject, startDate, startTime, endDate, endTime, instructor, resources, location, description, category)
 						VALUES
-							($points, '$title', #$start_date#, '$start_time', #$end_date#, '$end_time', '$instructor', '$resources', '$location',  '$description')");
+							($points, '$title', #$start_date#, '$start_time', #$end_date#, '$end_time', '$instructor', '$resources', '$location',  '$description', '$category')");
 					//place an if to make sure it runs
 					echo "Complete";
 					echo '<script type="text/javascript">
