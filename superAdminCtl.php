@@ -253,23 +253,26 @@ include("includes/header.php");
 						SET admin='Y',
 						superadmin='Y'
 						WHERE userID=$UID");
-						echo $userName. " is now " .$newlevel. ".";
+						echo "Complete";
 					} elseif($newlevel == "admin") {
 						$query = $conn->query(
 						"UPDATE tblStudents 
 						SET admin='Y'
 						WHERE userID=$UID");
-						echo $userName. " is now " .$newlevel. ".";
+						echo "Complete";
 					} elseif($newlevel == "student") {
 						$query = $conn->query(
 						"UPDATE tblStudents 
 						SET admin='N',
 						superadmin='N'
 						WHERE userID=$UID");
-						echo $userName. " is now " .$newlevel. ".";
+						echo "Complete";
 					} else {
 						echo "There has been an error with your submission";
 					}
+					echo '<script type="text/javascript">
+					window.location = "superAdminCtl.php"
+					</script>';
 				}
 			} else {
 				?>
@@ -286,6 +289,7 @@ include("includes/header.php");
 								<br>
 								<input type="submit" name="userSubmit">
 							</form>
+
 						</p>
 				</div>
 				<script>
